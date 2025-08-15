@@ -2,50 +2,71 @@ import websocket
 import json
 import numpy as np
 
-DERIV_TOKEN = "FscvuORyE062Izc"
-SYMBOL = "R_100"  # Change to your market (e.g., R_50, R_75)
-TIMEFRAME = 60    # 1-minute candles
+DERIV_TOKEN = "FscvuORyE062Izc"  # Replace with your real token
+APP_ID = 96293
+SYMBOL = "R_100"
+TIMEFRAME = 60       # 1-minute candles
 CANDLE_COUNT = 50
 
+candles = []  # store latest candles
+
 def on_open(ws):
-    print("Connected to Deriv WebSocket")
+    print("✅ Connected to Deriv WebSocket")
     ws.send(json.dumps({"authorize": DERIV_TOKEN}))
 
 def on_message(ws, message):
+    global candles
     data = json.loads(message)
+
     if "authorize" in data:
-        print("Authorized successfully!")
+        print("🔑 Authorized successfully!")
         # Request historical candles
         ws.send(json.dumps({
             "ticks_history": SYMBOL,
             "end": "latest",
             "count": CANDLE_COUNT,
             "style": "candles",
-            "granularity": TIMEFRAME
+            "granularity": TIMEFRAME,
+            "subscribe": 1  # subscribe to updates
         }))
 
-        ws.send(json.dumps({
-    "ticks_history": SYMBOL,
-    "style": "candles",
-    "granularity": TIMEFRAME,
-    "subscribe": 1
-}))
-
-    elif "candles" in data:
+    elif "candles" in data:  # historical + first update
         candles = data["candles"]
-        close_prices = [float(c["close"]) for c in candles]
+        process_indicators()
 
-        # Calculate RSI
-        rsi = compute_rsi(close_prices, 14)
-        ema = compute_ema(close_prices, 10)
+    elif "ohlc" in data:  # live candle update
+        new_candle = data["ohlc"]
+        # Update last candle if same epoch, else append new one
+        if candles and candles[-1]['epoch'] == new_candle['open_time']:
+            candles[-1] = {
+                "epoch": new_candle['open_time'],
+                "open": new_candle['open'],
+                "high": new_candle['high'],
+                "low": new_candle['low'],
+                "close": new_candle['close']
+            }
+        else:
+            candles.append({
+                "epoch": new_candle['open_time'],
+                "open": new_candle['open'],
+                "high": new_candle['high'],
+                "low": new_candle['low'],
+                "close": new_candle['close']
+            })
+            # Keep only last CANDLE_COUNT
+            candles = candles[-CANDLE_COUNT:]
 
-        print(f"RSI: {rsi[-1]:.2f}, EMA: {ema[-1]:.2f}, Last Close: {close_prices[-1]}")
+        process_indicators()
 
-        # Example trade condition:
-        if rsi[-1] < 30 and close_prices[-1] > ema[-1]:
-            print("BUY signal")
-        elif rsi[-1] > 70 and close_prices[-1] < ema[-1]:
-            print("SELL signal")
+def process_indicators():
+    close_prices = [float(c["close"]) for c in candles]
+    if len(close_prices) < 14:  # Not enough data for RSI
+        return
+
+    rsi = compute_rsi(close_prices, 14)
+    ema = compute_ema(close_prices, 10)
+
+    print(f"📊 RSI: {rsi[-1]:.2f}, EMA: {ema[-1]:.2f}, Last Close: {close_prices[-1]}")
 
 def compute_rsi(prices, period=14):
     deltas = np.diff(prices)
@@ -72,7 +93,7 @@ def compute_ema(prices, period=10):
 
 if __name__ == "__main__":
     ws = websocket.WebSocketApp(
-        "wss://ws.derivws.com/websockets/v3?app_id=96293",
+        f"wss://ws.derivws.com/websockets/v3?app_id=96293",
         on_open=on_open,
         on_message=on_message
     )

@@ -1,12 +1,18 @@
-<<<<<<< HEAD
-{"symbol": "R_100", "action": "BUY", "price": "100.63349", "sl_price": "100.33159", "tp_price": "100.93539", "timestamp": "2025-11-26T07:11:11.763767"}
-=======
-{
-  "action": "",
-  "symbol": "Volatility 100 Index",
-  "price": 0,
-  "sl_price": 0,
-  "tp_price": 0,
-  "timestamp": 0
-}
->>>>>>> f237ab83d5f86abd22befaf14d7b19115a2f5834
+[
+  {
+	"symbol": "R_100",
+	"action": "BUY",
+	"price": 100.63349,
+	"sl_price": 100.33159,
+	"tp_price": 100.93539,
+	"timestamp": "2025-11-26T07:11:11.763767"
+  },
+  {
+	"symbol": "Volatility 100 Index",
+	"action": "BUY",
+	"price": 705.02,
+	"sl_price": 701.4949,
+	"tp_price": 712.0702,
+	"timestamp": 1764417802
+  }
+]

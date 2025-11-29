@@ -1,8 +1,8 @@
 {
   "action": "BUY",
   "symbol": "Volatility 100 Index",
-  "price": 100000,
-  "sl_price": 95000,
-  "tp_price": 105000,
-  "timestamp": 1732820000
+  "price": "100.5",
+  "sl_price": "99.7",
+  "tp_price": "101.3",
+  "timestamp": "1764387660"
 }

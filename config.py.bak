@@ -1,0 +1,67 @@
+# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
+import os
+from datetime import datetime, time
+
+# Basic configuration
+APP_ID = os.getenv("APP_ID", "1089")
+API_TOKEN = os.getenv("API_TOKEN", "")
+SYMBOL = os.getenv("SYMBOL", "R_100")
+TRADING_ENABLED = os.getenv("TRADING_ENABLED", "False").lower() == "true"
+TRADE_EXECUTION = os.getenv("TRADE_EXECUTION", "demo")
+INITIAL_BALANCE = float(os.getenv("INITIAL_BALANCE", "10000"))
+
+# Active strategies
+ACTIVE_STRATEGIES = ["scalper", "snr_adx", "emergency", "super_scalper"]
+
+# Risk management
+STOP_LOSS_PERCENT = 0.5
+TAKE_PROFIT_PERCENT = 1.0
+MAX_TRADE_DURATION = 480
+MIN_CONFIDENCE = 25
+
+# Strategy configurations
+SCALPER_CONFIG = {
+    "enabled": "scalper" in ACTIVE_STRATEGIES,
+    "min_confidence": 60,
+    "daily_trade_limit": 8
+}
+
+ENHANCED_SNR_ADX_CONFIG = {
+    "enabled": "snr_adx" in ACTIVE_STRATEGIES, 
+    "min_confidence": 65,
+    "daily_trade_limit": 6
+}
+
+EMERGENCY_CONFIG = {
+    "enabled": "emergency" in ACTIVE_STRATEGIES,
+    "min_confidence": 25,
+    "daily_trade_limit": 10
+}
+
+SUPER_SCALPER_CONFIG = {
+    "enabled": "super_scalper" in ACTIVE_STRATEGIES,
+    "min_confidence": 70,
+    "daily_trade_limit": 60,
+    "trades_per_burst": 5,
+    "max_daily_bursts": 12
+}
+
+# Strategy config mapping
+STRATEGY_CONFIG = {
+    "scalper": SCALPER_CONFIG,
+    "snr_adx": ENHANCED_SNR_ADX_CONFIG,
+    "emergency": EMERGENCY_CONFIG, 
+    "super_scalper": SUPER_SCALPER_CONFIG
+}
+
+def get_max_open_positions(strategy_name):
+    limits = {
+        "scalper": 1,
+        "snr_adx": 2, 
+        "emergency": 1,
+        "super_scalper": 5
+    }
+    return limits.get(strategy_name, 1)
+
+print("Simple config loaded successfully")

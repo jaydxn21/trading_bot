@@ -1,0 +1,125 @@
+# bot.py - UPDATED WITH SUPER SCALPER INTEGRATION AND STRATEGY FIXES
+
+from datetime import datetime, timedelta# MONKEY PATCH MUST BE FIRST - BEFORE ANY OTHER IMPORTS
+import eventlet
+eventlet.monkey_patch()
+
+from flask import Flask, request
+from flask_socketio import SocketIO, emit
+import logging
+from datetime import datetime
+import threading
+from ai_core import MLTradePredictor
+
+import time
+import json
+import websocket
+import os
+from typing import Optional, Dict, Any
+import numpy as np
+import traceback
+
+# Import your modules
+import config
+from utils import indicators
+from trading_logic import TradingLogic
+from strategies import STRATEGIES
+
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+)
+logger = logging.getLogger(__name__)
+
+app = Flask(__name__)
+app.config['SECRET_KEY'] = 'quantum-trader-pro-secret-key'
+
+
+        if actual_strat_name in self.strategy_performance:
+            perf = self.strategy_performance[actual_strat_name]
+            if perf.get("consecutive_losses", 0) >= config.MAX_CONSECUTIVE_LOSSES:
+                logger.info(f"⏸️ Skipping {actual_strat_name} - {perf['consecutive_losses']} consecutive losses")
+                continue
+        
+        strategy_instance = STRATEGIES.get(actual_strat_name)
+        
+        if not strategy_instance:
+            logger.warning(f"❌ Strategy {strat_name} -> {actual_strat_name} not found")
+            continue
+            
+        settings = config.STRATEGY_CONFIG.get(strat_name, {})
+        if not settings.get("enabled", False):
+            continue
+\1# FIXED: Orphaned try removed\n            # Get signal from strategy
+            signal = strategy_instance.analyze_market(candles, price, indicator_data)
+            
+            if signal and signal.get("signal") in ["buy", "sell"]:
+                confidence = signal.get("confidence", 0)
+                action = signal.get("signal", "").upper()
+                reason = signal.get("reason", "")
+                
+                strategy_min_confidence = settings.get("min_confidence", config.MIN_CONFIDENCE)
+                
+                # SPECIAL HANDLING FOR SUPER SCALPER
+                if actual_strat_name == "super_scalper":
+                    # Super scalper has different confidence requirements
+                    if confidence >= 70:  # Higher threshold for burst trades
+                        signals.append((actual_strat_name, action, confidence, indicator_data, signal))
+                        logger.info(f"🚀 SUPER SCALPER BURST SIGNAL: {action} (confidence: {confidence}%)")
+                    
+                elif confidence >= strategy_min_confidence:
+                    if self.is_good_market_condition(indicator_data, action, actual_strat_name):
+                        signals.append((actual_strat_name, action, confidence, indicator_data, signal))
+                        logger.info(f"🎯 {actual_strat_name.upper()} SIGNAL: {action} (confidence: {confidence}%) - {reason}")
+                    else:
+                        logger.info(f"🌊 {actual_strat_name.upper()} signal filtered - market conditions")
+                    
+       \1\2:\3Exception as e:
+            logger.error(f"❌ Strategy {actual_strat_name} evaluation failed: {e}")
+    
+    return signals
+\1# FIXED: Orphaned try removed\n    logger.info("🚀 Starting QuantumTrader Pro System...")
+    logger.info(f"📊 Active Strategies: {', '.join(config.ACTIVE_STRATEGIES)}")
+    logger.info(f"💰 Initial Balance: ${config.INITIAL_BALANCE}")
+    logger.info(f"⚡ Trading Enabled: {config.TRADING_ENABLED}")
+    logger.info(f"🎯 Real Trading: {config.TRADE_EXECUTION}")
+    
+    # Initialize real trading
+    if trading_bot.real_trading_enabled:
+        logger.info("💰 REAL TRADING ENABLED - Trades will execute on Deriv platform")
+    
+    # Start connection monitoring
+    trading_bot.start_connection_monitor()
+    
+    # Start platform connection
+    trading_bot.start_deriv_connection()
+    
+    # Test real trading after delay
+    if trading_bot.real_trading_enabled:
+        logger.info("🧪 Testing real trading functionality...")
+        import time
+        time.sleep(8)  # Wait for connection to stabilize
+        trading_bot.test_real_trade()
+    
+    logger.info("Starting WebSocket server on http://0.0.0.0:5000")
+\1# FIXED: Orphaned try removed\n        # FIXED: Completely clean socketio.run call
+        socketio.run(
+            app, 
+            host='0.0.0.0', 
+            port=5000, 
+            debug=False, 
+            use_reloader=False
+        )
+   \1\2:\3KeyboardInterrupt:
+        logger.info("Server stopped by user")
+   \1\2:\3Exception as e:
+        logger.error(f"Server error: {e}")\1\2:\3Exception as e:
+    # Handle the exception
+    print(f"Error: {e}")
+finally:
+    cleanup()
+
+
+if __name__ == "__main__":
+    run_server()

@@ -1,0 +1,271 @@
+2025-10-30 22:05:52,148 - ai_core - WARNING - No ML model found. Using dummy predictor.
+2025-10-30 22:06:03,135 - __main__ - INFO - Connecting to Deriv...
+2025-10-30 22:06:03,735 - websocket - INFO - Websocket connected
+2025-10-30 22:06:03,736 - __main__ - INFO - WebSocket open
+2025-10-30 22:06:03,951 - __main__ - INFO - Authorized
+2025-10-30 22:06:04,063 - __main__ - INFO - Balance: $9988.38
+2025-10-30 22:06:04,151 - __main__ - INFO - Connected & authorized
+2025-10-30 22:06:04,152 - __main__ - INFO - REAL TRADING ENABLED
+2025-10-30 22:06:11,162 - ai_core - WARNING - openai package not installed. AI optimizer disabled.
+2025-10-30 22:06:11,253 - __main__ - INFO - AI Optimizer ready
+2025-10-30 22:06:11,254 - __main__ - INFO - Starting QuantumTrader Pro…
+2025-10-30 22:06:11,255 - __main__ - INFO - Active strategies: scalper, snr_adx, emergency, super_scalper, vol_mean_reversion
+2025-10-30 22:06:11,255 - __main__ - INFO - Initial balance: $1000.0
+2025-10-30 22:06:11,255 - __main__ - INFO - Trading: True (real)
+2025-10-30 22:06:11,256 - __main__ - INFO - Balance: $9988.38
+2025-10-30 22:06:11,544 - websocket - INFO - Websocket connected
+2025-10-30 22:06:11,544 - __main__ - INFO - Deriv WS opened
+2025-10-30 22:06:11,730 - __main__ - INFO - Authorized
+2025-10-30 22:06:12,163 - __main__ - INFO - Subscribed to R_100
+2025-10-30 22:06:14,177 - __main__ - ERROR - Tick processing error: cannot access local variable 'new_c' where it is not associated with a value
+2025-10-30 22:06:19,272 - __main__ - INFO - Running test real trade ($1 CALL)…
+2025-10-30 22:06:19,272 - __main__ - INFO - Placing CALL $1.00 on R_100
+2025-10-30 22:06:19,273 - __main__ - INFO - Test trade sent
+2025-10-30 22:06:19,422 - __main__ - INFO - Trade executed – contract 298153165628
+2025-10-30 22:06:19,422 - __main__ - ERROR - Message handling error: 'NoneType' object has no attribute 'upper'
+2025-10-30 22:06:19,623 - __main__ - ERROR - Tick processing error: cannot access local variable 'new_c' where it is not associated with a value
+2025-10-30 22:38:35,148 - ai_core - WARNING - No ML model found. Using dummy predictor.
+2025-10-30 22:39:14,043 - __main__ - INFO - Connecting to Deriv...
+2025-10-30 22:39:14,684 - websocket - INFO - Websocket connected
+2025-10-30 22:39:14,685 - __main__ - INFO - WebSocket open
+2025-10-30 22:39:14,881 - __main__ - INFO - Authorized
+2025-10-30 22:39:14,983 - __main__ - INFO - Balance: $9989.32
+2025-10-30 22:39:15,108 - __main__ - INFO - Connected & authorized
+2025-10-30 22:39:15,109 - __main__ - INFO - REAL TRADING ENABLED
+2025-10-30 22:39:22,202 - ai_core - WARNING - openai package not installed. AI optimizer disabled.
+2025-10-30 22:39:22,202 - __main__ - INFO - AI Optimizer ready
+2025-10-30 22:39:22,203 - __main__ - INFO - Starting QuantumTrader Pro…
+2025-10-30 22:39:22,204 - __main__ - INFO - Active strategies: scalper, snr_adx, emergency, super_scalper, vol_mean_reversion
+2025-10-30 22:39:22,204 - __main__ - INFO - Initial balance: $1000.0
+2025-10-30 22:39:22,204 - __main__ - INFO - Trading: True (real)
+2025-10-30 22:39:22,204 - __main__ - INFO - Balance: $9989.32
+2025-10-30 22:39:22,502 - websocket - INFO - Websocket connected
+2025-10-30 22:39:22,502 - __main__ - INFO - Deriv WS opened
+2025-10-30 22:39:22,738 - __main__ - INFO - Authorized
+2025-10-30 22:39:24,137 - __main__ - INFO - Subscribed to R_100
+2025-10-30 22:39:26,144 - __main__ - ERROR - Tick processing error: cannot access local variable 'new_c' where it is not associated with a value
+2025-10-30 22:39:30,212 - __main__ - INFO - Running test real trade ($1 CALL)…
+2025-10-30 22:39:30,213 - __main__ - INFO - Placing CALL $1.00 on R_100
+2025-10-30 22:39:30,213 - __main__ - INFO - Test trade sent
+2025-10-30 22:39:30,381 - __main__ - INFO - Trade executed – contract 298154248508 (UNKNOWN) @ $1.00000
+2025-10-30 22:39:31,589 - __main__ - ERROR - Tick processing error: cannot access local variable 'new_c' where it is not associated with a value
+2025-10-30 22:39:36,991 - __main__ - ERROR - Tick processing error: cannot access local variable 'new_c' where it is not associated with a value
+2025-10-30 22:39:42,495 - __main__ - ERROR - Tick processing error: cannot access local variable 'new_c' where it is not associated with a value
+2025-10-30 22:39:47,912 - __main__ - ERROR - Tick processing error: cannot access local variable 'new_c' where it is not associated with a value
+2025-10-30 22:39:53,316 - __main__ - ERROR - Tick processing error: cannot access local variable 'new_c' where it is not associated with a value
+2025-10-30 22:47:47,502 - ai_core - WARNING - No ML model found. Using dummy predictor.
+2025-10-30 22:48:03,824 - __main__ - INFO - Connecting to Deriv...
+2025-10-30 22:48:04,298 - websocket - INFO - Websocket connected
+2025-10-30 22:48:04,298 - __main__ - INFO - WebSocket open
+2025-10-30 22:48:04,622 - __main__ - INFO - Authorized
+2025-10-30 22:48:04,735 - __main__ - INFO - Balance: $9990.26
+2025-10-30 22:48:04,883 - __main__ - INFO - Connected & authorized
+2025-10-30 22:48:04,883 - __main__ - INFO - REAL TRADING ENABLED
+2025-10-30 22:48:10,294 - __main__ - INFO - Balance: $9990.26
+2025-10-30 22:48:10,810 - ai_core - WARNING - openai package not installed. AI optimizer disabled.
+2025-10-30 22:48:10,810 - __main__ - INFO - AI Optimizer ready
+2025-10-30 22:48:10,811 - __main__ - INFO - Starting QuantumTrader Pro…
+2025-10-30 22:48:10,811 - __main__ - INFO - Active strategies: scalper, snr_adx, emergency, super_scalper, vol_mean_reversion
+2025-10-30 22:48:10,811 - __main__ - INFO - Initial balance: $1000.0
+2025-10-30 22:48:10,823 - __main__ - INFO - Trading: True (real)
+2025-10-30 22:48:11,122 - websocket - INFO - Websocket connected
+2025-10-30 22:48:11,122 - __main__ - INFO - Deriv WS opened
+2025-10-30 22:48:11,380 - __main__ - INFO - Authorized
+2025-10-30 22:48:12,107 - __main__ - INFO - Subscribed to R_100
+2025-10-30 22:48:14,155 - __main__ - ERROR - Tick processing error: cannot access local variable 'new_c' where it is not associated with a value
+2025-10-30 22:48:18,826 - __main__ - INFO - Running test real trade ($1 CALL)…
+2025-10-30 22:48:18,827 - __main__ - INFO - Placing CALL $1.00 on R_100
+2025-10-30 22:48:18,827 - __main__ - INFO - Test trade sent
+2025-10-30 22:48:18,966 - __main__ - INFO - Trade executed – contract 298154549908 (UNKNOWN) @ $1.00000
+2025-10-30 22:48:19,560 - __main__ - ERROR - Tick processing error: cannot access local variable 'new_c' where it is not associated with a value
+2025-10-30 22:48:24,997 - __main__ - ERROR - Tick processing error: cannot access local variable 'new_c' where it is not associated with a value
+2025-10-30 22:48:30,428 - __main__ - ERROR - Tick processing error: cannot access local variable 'new_c' where it is not associated with a value
+2025-10-30 22:54:52,592 - ai_core - WARNING - No ML model found. Using dummy predictor.
+2025-10-30 22:55:24,044 - __main__ - INFO - Connecting to Deriv...
+2025-10-30 22:55:24,675 - websocket - INFO - Websocket connected
+2025-10-30 22:55:24,675 - __main__ - INFO - WebSocket open
+2025-10-30 22:55:24,907 - __main__ - INFO - Authorized
+2025-10-30 22:55:25,038 - __main__ - INFO - Balance: $9991.20
+2025-10-30 22:55:25,085 - __main__ - INFO - Connected & authorized
+2025-10-30 22:55:25,085 - __main__ - INFO - REAL TRADING ENABLED
+2025-10-30 22:55:30,587 - __main__ - INFO - Balance: $9991.20
+2025-10-30 22:55:31,114 - ai_core - WARNING - openai package not installed. AI optimizer disabled.
+2025-10-30 22:55:31,114 - __main__ - INFO - AI Optimizer ready
+2025-10-30 22:55:31,115 - __main__ - INFO - Starting QuantumTrader Pro…
+2025-10-30 22:55:31,115 - __main__ - INFO - Active strategies: scalper, snr_adx, emergency, super_scalper, vol_mean_reversion
+2025-10-30 22:55:31,116 - __main__ - INFO - Initial balance: $1000.0
+2025-10-30 22:55:31,116 - __main__ - INFO - Trading: True (real)
+2025-10-30 22:55:31,361 - websocket - INFO - Websocket connected
+2025-10-30 22:55:31,361 - __main__ - INFO - Deriv WS opened
+2025-10-30 22:55:31,619 - __main__ - INFO - Authorized
+2025-10-30 22:55:32,153 - __main__ - INFO - Subscribed to R_100
+2025-10-30 22:55:34,164 - __main__ - ERROR - Tick processing error: cannot access local variable 'new_c' where it is not associated with a value
+2025-10-30 22:55:39,118 - __main__ - INFO - Running test real trade ($1 CALL)…
+2025-10-30 22:55:39,119 - __main__ - INFO - Placing CALL $1.00 on R_100
+2025-10-30 22:55:39,120 - __main__ - INFO - Test trade sent
+2025-10-30 22:55:39,342 - __main__ - INFO - Trade executed – contract 298154812048 (UNKNOWN) @ $1.00000
+2025-10-30 22:55:39,733 - __main__ - ERROR - Tick processing error: cannot access local variable 'new_c' where it is not associated with a value
+2025-10-30 22:55:45,323 - __main__ - ERROR - Tick processing error: cannot access local variable 'new_c' where it is not associated with a value
+2025-10-30 22:55:50,725 - __main__ - ERROR - Tick processing error: cannot access local variable 'new_c' where it is not associated with a value
+2025-10-30 22:55:56,133 - __main__ - ERROR - Tick processing error: cannot access local variable 'new_c' where it is not associated with a value
+2025-10-30 22:56:01,529 - __main__ - ERROR - Tick processing error: cannot access local variable 'new_c' where it is not associated with a value
+2025-10-30 22:56:07,117 - __main__ - ERROR - Tick processing error: cannot access local variable 'new_c' where it is not associated with a value
+2025-10-30 22:56:12,528 - __main__ - ERROR - Tick processing error: cannot access local variable 'new_c' where it is not associated with a value
+2025-10-30 22:56:17,955 - __main__ - ERROR - Tick processing error: cannot access local variable 'new_c' where it is not associated with a value
+2025-10-30 22:56:23,382 - __main__ - ERROR - Tick processing error: cannot access local variable 'new_c' where it is not associated with a value
+2025-10-30 22:56:28,823 - __main__ - ERROR - Tick processing error: cannot access local variable 'new_c' where it is not associated with a value
+2025-10-30 22:56:34,228 - __main__ - ERROR - Tick processing error: cannot access local variable 'new_c' where it is not associated with a value
+2025-10-30 22:56:39,669 - __main__ - ERROR - Tick processing error: cannot access local variable 'new_c' where it is not associated with a value
+2025-10-30 22:56:45,069 - __main__ - ERROR - Tick processing error: cannot access local variable 'new_c' where it is not associated with a value
+2025-10-30 22:56:50,734 - __main__ - ERROR - Tick processing error: cannot access local variable 'new_c' where it is not associated with a value
+2025-10-30 22:56:56,164 - __main__ - ERROR - Tick processing error: cannot access local variable 'new_c' where it is not associated with a value
+2025-10-30 22:57:01,597 - __main__ - ERROR - Tick processing error: cannot access local variable 'new_c' where it is not associated with a value
+2025-10-30 22:57:06,981 - __main__ - ERROR - Tick processing error: cannot access local variable 'new_c' where it is not associated with a value
+2025-10-30 23:05:56,524 - strategies - INFO - Loading trading strategies...
+2025-10-30 23:05:56,563 - strategies - INFO - Loaded: emergency ← EmergencyStrategy (emergency.py)
+2025-10-30 23:05:56,563 - strategies - WARNING - Duplicate strategy key 'emergency' – keeping the first one (EmergencyStrategy)
+2025-10-30 23:05:56,564 - strategies - WARNING - Duplicate strategy key 'emergency' – keeping the first one (EmergencyStrategy)
+2025-10-30 23:05:56,564 - strategies - WARNING - Duplicate strategy key 'emergency' – keeping the first one (EmergencyStrategy)
+2025-10-30 23:05:56,564 - strategies - INFO - Loaded: snr_adx ← Enhanced_SNR_ADX_Strategy (enhanced_snr_adx.py)
+2025-10-30 23:05:56,564 - strategies - WARNING - Duplicate strategy key 'snr_adx' – keeping the first one (Enhanced_SNR_ADX_Strategy)
+2025-10-30 23:05:56,565 - strategies - INFO - Loaded: scalper ← ScalperStrategy (scalper.py)
+2025-10-30 23:05:56,565 - strategies - INFO - Loaded: enhanced_sma ← Enhanced_SMA_Strategy (sma.py)
+2025-10-30 23:05:56,565 - strategies - INFO - Loaded: super_scalper ← SuperScalperStrategy (super_scalper.py)
+2025-10-30 23:05:56,566 - strategies - WARNING - Duplicate strategy key 'super_scalper' – keeping the first one (SuperScalperStrategy)
+2025-10-30 23:05:56,566 - strategies - INFO - Loaded: vol_mean_reversion ← VolMeanReversionStrategy (vol_mean_reversion.py)
+2025-10-30 23:05:56,566 - strategies - INFO - All required core strategies are loaded.
+2025-10-30 23:05:56,566 - strategies - INFO - Total strategies loaded: 6
+2025-10-30 23:05:56,566 - strategies - INFO - Available keys: ['emergency', 'enhanced_sma', 'scalper', 'snr_adx', 'super_scalper', 'vol_mean_reversion']
+2025-10-30 23:05:56,567 - ai_core - WARNING - No ML model found. Using dummy predictor.
+2025-10-30 23:06:22,250 - __main__ - INFO - Connecting to Deriv...
+2025-10-30 23:06:22,774 - websocket - INFO - Websocket connected
+2025-10-30 23:06:22,774 - __main__ - INFO - WebSocket open
+2025-10-30 23:06:23,187 - __main__ - INFO - Authorized
+2025-10-30 23:06:23,286 - __main__ - INFO - Balance: $9990.20
+2025-10-30 23:06:23,321 - __main__ - INFO - Connected & authorized
+2025-10-30 23:06:23,321 - __main__ - INFO - REAL TRADING ENABLED
+2025-10-30 23:06:28,800 - __main__ - INFO - Balance: $9990.20
+2025-10-30 23:06:29,232 - ai_core - WARNING - openai package not installed. AI optimizer disabled.
+2025-10-30 23:06:29,233 - __main__ - INFO - AI Optimizer ready
+2025-10-30 23:06:29,234 - __main__ - INFO - Starting QuantumTrader Pro…
+2025-10-30 23:06:29,234 - __main__ - INFO - Active strategies: scalper, snr_adx, emergency, super_scalper, vol_mean_reversion
+2025-10-30 23:06:29,234 - __main__ - INFO - Initial balance: $1000.0
+2025-10-30 23:06:29,234 - __main__ - INFO - Trading: True (real)
+2025-10-30 23:06:29,510 - websocket - INFO - Websocket connected
+2025-10-30 23:06:29,511 - __main__ - INFO - Deriv WS opened
+2025-10-30 23:06:29,757 - __main__ - INFO - Authorized
+2025-10-30 23:06:30,081 - __main__ - INFO - Subscribed to R_100
+2025-10-30 23:06:32,093 - __main__ - ERROR - Tick processing error: cannot access local variable 'new_c' where it is not associated with a value
+2025-11-01 06:42:57,443 - strategies - INFO - Loading trading strategies...
+2025-11-01 06:42:57,488 - strategies - INFO - Loaded: emergency ← EmergencyStrategy (emergency.py)
+2025-11-01 06:42:57,519 - strategies - WARNING - Duplicate strategy key 'emergency' – keeping the first one (EmergencyStrategy)
+2025-11-01 06:42:57,549 - strategies - WARNING - Duplicate strategy key 'emergency' – keeping the first one (EmergencyStrategy)
+2025-11-01 06:42:57,550 - strategies - WARNING - Duplicate strategy key 'emergency' – keeping the first one (EmergencyStrategy)
+2025-11-01 06:42:57,583 - strategies - INFO - Loaded: snr_adx ← Enhanced_SNR_ADX_Strategy (enhanced_snr_adx.py)
+2025-11-01 06:42:57,583 - strategies - WARNING - Duplicate strategy key 'snr_adx' – keeping the first one (Enhanced_SNR_ADX_Strategy)
+2025-11-01 06:42:57,593 - strategies - INFO - Loaded: scalper ← ScalperStrategy (scalper.py)
+2025-11-01 06:42:57,608 - strategies - INFO - Loaded: enhanced_sma ← Enhanced_SMA_Strategy (sma.py)
+2025-11-01 06:42:57,618 - strategies - INFO - Loaded: super_scalper ← SuperScalperStrategy (super_scalper.py)
+2025-11-01 06:42:57,646 - strategies - WARNING - Duplicate strategy key 'super_scalper' – keeping the first one (SuperScalperStrategy)
+2025-11-01 06:42:57,655 - strategies - INFO - Loaded: vol_mean_reversion ← VolMeanReversionStrategy (vol_mean_reversion.py)
+2025-11-01 06:42:57,655 - strategies - INFO - All required core strategies are loaded.
+2025-11-01 06:42:57,655 - strategies - INFO - Total strategies loaded: 6
+2025-11-01 06:42:57,656 - strategies - INFO - Available keys: ['emergency', 'enhanced_sma', 'scalper', 'snr_adx', 'super_scalper', 'vol_mean_reversion']
+2025-11-01 06:42:57,656 - ai_core - WARNING - No ML model found. Using dummy predictor.
+2025-11-01 06:44:57,625 - __main__ - INFO - Connecting to Deriv...
+2025-11-01 06:44:57,974 - websocket - INFO - Websocket connected
+2025-11-01 06:44:57,974 - __main__ - INFO - WebSocket open
+2025-11-01 06:44:58,345 - __main__ - INFO - Authorized
+2025-11-01 06:44:58,436 - __main__ - INFO - Balance: $9990.20
+2025-11-01 06:44:58,653 - __main__ - INFO - Connected & authorized
+2025-11-01 06:44:58,653 - __main__ - INFO - REAL TRADING ENABLED
+2025-11-01 06:45:00,862 - ai_core - WARNING - openai package not installed. AI optimizer disabled.
+2025-11-01 06:45:00,863 - __main__ - INFO - AI Optimizer ready
+2025-11-01 06:45:00,863 - __main__ - INFO - Starting QuantumTrader Pro…
+2025-11-01 06:45:00,864 - __main__ - INFO - Active strategies: scalper, snr_adx, emergency, super_scalper, vol_mean_reversion
+2025-11-01 06:45:00,864 - __main__ - INFO - Initial balance: $1000.0
+2025-11-01 06:45:00,864 - __main__ - INFO - Trading: True (real)
+2025-11-01 06:45:00,867 - __main__ - INFO - Balance: $9990.20
+2025-11-01 06:45:01,094 - websocket - INFO - Websocket connected
+2025-11-01 06:45:01,094 - __main__ - INFO - Deriv WS opened
+2025-11-01 06:45:01,414 - __main__ - INFO - Authorized
+2025-11-01 06:45:04,161 - __main__ - INFO - Subscribed to R_100
+2025-11-01 06:45:08,882 - __main__ - INFO - Running test real trade ($1 CALL)…
+2025-11-01 06:45:08,883 - __main__ - INFO - Placing CALL $1.00 on R_100
+2025-11-01 06:45:08,883 - __main__ - INFO - Test trade sent
+2025-11-01 06:45:09,038 - __main__ - INFO - Trade executed – contract 298259604148 (UNKNOWN) @ $1.00000
+2025-11-01 06:47:09,098 - __main__ - ERROR - WS error: Connection to remote host was lost.
+2025-11-01 06:47:09,620 - websocket - ERROR - Connection to remote host was lost. - goodbye
+2025-11-01 06:47:09,620 - __main__ - WARNING - WS closed: None – None
+2025-11-01 06:47:30,877 - __main__ - WARNING - Reconnecting to Deriv...
+2025-11-01 06:47:30,878 - __main__ - INFO - Connecting to Deriv...
+2025-11-01 06:47:31,078 - websocket - INFO - Websocket connected
+2025-11-01 06:47:31,079 - __main__ - INFO - WebSocket open
+2025-11-01 06:47:31,254 - __main__ - INFO - Authorized
+2025-11-01 06:47:31,341 - __main__ - INFO - Balance: $9991.14
+2025-11-01 06:47:31,881 - __main__ - INFO - Connected & authorized
+2025-11-01 06:49:31,394 - __main__ - ERROR - WS error: Connection to remote host was lost.
+2025-11-01 06:49:31,898 - __main__ - WARNING - Reconnecting to Deriv...
+2025-11-01 06:49:31,898 - __main__ - INFO - Connecting to Deriv...
+2025-11-01 06:49:31,938 - websocket - ERROR - Connection to remote host was lost. - goodbye
+2025-11-01 06:49:31,938 - __main__ - WARNING - WS closed: None – None
+2025-11-01 06:49:32,274 - websocket - INFO - Websocket connected
+2025-11-01 06:49:32,275 - __main__ - INFO - WebSocket open
+2025-11-01 06:49:32,515 - __main__ - INFO - Authorized
+2025-11-01 06:49:32,600 - __main__ - INFO - Balance: $9991.14
+2025-11-01 06:49:32,905 - __main__ - INFO - Connected & authorized
+2025-11-01 06:59:01,940 - strategies - INFO - Loading trading strategies...
+2025-11-01 06:59:02,003 - strategies - INFO - Loaded: emergency ← Emergency_Overbought_Strategy (emergency_overbought.py)
+2025-11-01 06:59:02,003 - strategies - WARNING - Duplicate strategy key 'emergency' – keeping the first one (Emergency_Overbought_Strategy)
+2025-11-01 06:59:02,028 - strategies - INFO - Loaded: snr_adx ← Enhanced_SNR_ADX_Strategy (enhanced_snr_adx.py)
+2025-11-01 06:59:02,028 - strategies - WARNING - Duplicate strategy key 'snr_adx' – keeping the first one (Enhanced_SNR_ADX_Strategy)
+2025-11-01 06:59:02,074 - strategies - INFO - Loaded: scalper ← ScalperStrategy (scalper.py)
+2025-11-01 06:59:02,091 - strategies - INFO - Loaded: enhanced_sma ← Enhanced_SMA_Strategy (sma.py)
+2025-11-01 06:59:02,115 - strategies - INFO - Loaded: super_scalper ← SuperScalperStrategy (super_scalper.py)
+2025-11-01 06:59:02,146 - strategies - INFO - Loaded: vol_mean_reversion ← VolMeanReversionStrategy (vol_mean_reversion.py)
+2025-11-01 06:59:02,147 - strategies - INFO - All required core strategies are loaded.
+2025-11-01 06:59:02,147 - strategies - INFO - Total strategies loaded: 6
+2025-11-01 06:59:02,148 - strategies - INFO - Available keys: ['emergency', 'enhanced_sma', 'scalper', 'snr_adx', 'super_scalper', 'vol_mean_reversion']
+2025-11-01 06:59:02,148 - ai_core - WARNING - No ML model found. Using dummy predictor.
+2025-11-01 06:59:18,191 - __main__ - INFO - Connecting to Deriv...
+2025-11-01 06:59:18,665 - websocket - INFO - Websocket connected
+2025-11-01 06:59:18,665 - __main__ - INFO - WebSocket open
+2025-11-01 06:59:18,871 - __main__ - INFO - Authorized
+2025-11-01 06:59:18,974 - __main__ - INFO - Balance: $9991.14
+2025-11-01 06:59:19,249 - __main__ - INFO - Connected & authorized
+2025-11-01 06:59:19,249 - __main__ - INFO - REAL TRADING ENABLED
+2025-11-01 06:59:19,497 - __main__ - INFO - Balance: $9991.14
+2025-11-01 06:59:20,212 - ai_core - WARNING - openai package not installed. AI optimizer disabled.
+2025-11-01 06:59:20,212 - __main__ - INFO - AI Optimizer ready
+2025-11-01 06:59:20,213 - __main__ - INFO - Starting QuantumTrader Pro…
+2025-11-01 06:59:20,213 - __main__ - INFO - Active strategies: scalper, snr_adx, emergency, super_scalper, vol_mean_reversion
+2025-11-01 06:59:20,213 - __main__ - INFO - Initial balance: $1000.0
+2025-11-01 06:59:20,213 - __main__ - INFO - Trading: True (real)
+2025-11-01 06:59:20,454 - websocket - INFO - Websocket connected
+2025-11-01 06:59:20,454 - __main__ - INFO - Deriv WS opened
+2025-11-01 06:59:20,652 - __main__ - INFO - Authorized
+2025-11-01 06:59:22,073 - __main__ - INFO - Subscribed to R_100
+2025-11-01 06:59:28,216 - __main__ - INFO - Running test real trade ($1 CALL)…
+2025-11-01 06:59:28,310 - __main__ - INFO - Placing CALL $1.00 on R_100
+2025-11-01 06:59:28,310 - __main__ - INFO - Test trade sent
+2025-11-01 06:59:28,452 - __main__ - INFO - Trade executed – contract 298260629768 (UNKNOWN) @ $1.00000
+2025-11-01 07:01:28,514 - __main__ - ERROR - WS error: Connection to remote host was lost.
+2025-11-01 07:01:29,314 - websocket - ERROR - Connection to remote host was lost. - goodbye
+2025-11-01 07:01:29,314 - __main__ - WARNING - WS closed: None – None
+2025-11-01 07:01:50,226 - __main__ - WARNING - Reconnecting to Deriv...
+2025-11-01 07:01:50,317 - __main__ - INFO - Connecting to Deriv...
+2025-11-01 07:01:50,595 - websocket - INFO - Websocket connected
+2025-11-01 07:01:50,595 - __main__ - INFO - WebSocket open
+2025-11-01 07:01:50,837 - __main__ - INFO - Authorized
+2025-11-01 07:01:50,966 - __main__ - INFO - Balance: $9992.08
+2025-11-01 07:01:51,320 - __main__ - INFO - Connected & authorized
+2025-11-01 07:03:51,013 - __main__ - ERROR - WS error: Connection to remote host was lost.
+2025-11-01 07:03:51,362 - __main__ - WARNING - Reconnecting to Deriv...
+2025-11-01 07:03:51,362 - __main__ - INFO - Connecting to Deriv...
+2025-11-01 07:03:51,620 - websocket - INFO - Websocket connected
+2025-11-01 07:03:51,620 - __main__ - INFO - WebSocket open
+2025-11-01 07:03:52,073 - __main__ - INFO - Authorized
+2025-11-01 07:03:52,181 - __main__ - INFO - Balance: $9992.08
+2025-11-01 07:03:52,364 - __main__ - INFO - Connected & authorized
+2025-11-01 07:03:56,886 - websocket - ERROR - Connection to remote host was lost. - goodbye
+2025-11-01 07:03:56,887 - __main__ - WARNING - WS closed: None – None

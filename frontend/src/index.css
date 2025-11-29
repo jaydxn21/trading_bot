@@ -70,3 +70,11 @@ body {
 .stat-value.negative {
   color: #dc2626; /* red */
 }
+body {
+  margin: 0;
+  padding: 0;
+  background: #0a0a0a;
+  color: #fff;
+  font-family: 'Courier New', monospace;
+}
+* { box-sizing: border-box; }

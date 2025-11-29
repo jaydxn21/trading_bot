@@ -1,49 +1,53 @@
-# final_test.py
+# quantum_github_pusher.py
+import requests
 import json
-import os
 import time
-from datetime import datetime
-from pathlib import Path
+import base64
 
-def test_complete_bridge():
-    signal_file = "/tmp/QuantumTrader/signals.json"
-    
-    # Create signal
+# === CONFIG ===
+GITHUB_TOKEN = "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"  # Generate at https://github.com/settings/tokens
+REPO         = "jaydxn21/trading_bot"
+FILE_PATH    = "signals.json"
+BRANCH       = "main"
+
+def send_signal(action, symbol="Volatility 100 Index", price=0, sl=0, tp=0):
     signal = {
-        "symbol": "Volatility 100 Index",
-        "action": "BUY",
-        "price": "100.50000",
-        "sl_price": "99.70000",
-        "tp_price": "101.30000",
-        "timestamp": datetime.now().isoformat()
-    }
-    
-    print("=== TESTING COMPLETE BRIDGE ===")
-    print("Creating signal at:", datetime.now().isoformat())
-    
-    # Ensure directory exists
-    Path("/tmp/QuantumTrader").mkdir(parents=True, exist_ok=True)
-    
-    # Write signal
-    with open(signal_file, 'w') as f:
-        json.dump(signal, f, indent=2)
-    
-    print("✅ Signal created!")
-    print("📋 Signal content:")
-    print(json.dumps(signal, indent=2))
-    
-    # Monitor for 30 seconds
-    print("\n🔍 Monitoring for MT5 response...")
-    for i in range(30):
-        time.sleep(1)
-        if not os.path.exists(signal_file):
-            print(f"🎯 SUCCESS! MT5 processed the signal at {datetime.now().isoformat()}")
-            return True
-        if i % 5 == 0:
-            print(f"⏰ Still waiting... {i+1}s elapsed")
-    
-    print("❌ Signal not processed within 30 seconds")
-    return False
+        "action": action,
+        "symbol": symbol,
+        "price": price,
+        "sl_price": sl,
+        "tp_price": tp,
+        "timestamp": int(time.time()) 
+              }
 
+    url = f"https://api.github.com/repos/{REPO}/contents/{FILE_PATH}"
+    headers = {
+        "Authorization": f"token {GITHUB_TOKEN}",
+        "Accept": "application/vnd.github.v3+json"
+    }
+
+    # Get current file SHA
+    resp = requests.get(url, headers=headers)
+    if resp.status_code == 404:
+        sha = None
+    else:
+        sha = resp.json().get("sha")
+
+    # Upload
+    payload = {
+        "message": f"Signal {action} {symbol}",
+        "content": base64.b64encode(json.dumps(signal, indent=2).encode()).decode(),
+        "branch": BRANCH
+    }
+    if sha:
+        payload["sha"] = sha
+
+    r = requests.put(url, headers=headers, json=payload)
+    if r.status_code in (200, 201):
+        print(f"SIGNAL SENT → {action} {symbol} at {time.strftime('%H:%M:%S')}")
+    else:
+        print("GitHub upload failed:", r.text)
+
+# === TEST ===
 if __name__ == "__main__":
-    test_complete_bridge()
+    send_signal("BUY", "Volatility 100 Index", 100.500, 99.700, 101.300)

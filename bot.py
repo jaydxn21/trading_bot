@@ -256,26 +256,23 @@ def simulate_demo_data():
     process_market_cycle()
 
 def send_mt5_signal(signal: str, strategy: str, confidence: int):
-    """Send signal to MT5 via file bridge"""
     if not MT5_BRIDGE_ENABLED:
         return
-        
-    try:
-        success = mt5_bridge.write_signal({
-            "signal": signal,
-            "symbol": config.SYMBOL,
-            "price": last_price,
-            "strategy": strategy,
-            "confidence": confidence
-        })
-        
-        if success:
-            logger.info("📡 MT5 signal sent successfully")
-        else:
-            logger.warning("⚠️ MT5 signal not sent (hold signal or error)")
-            
-    except Exception as e:
-        logger.error(f"❌ MT5 signal bridge failed: {e}")
+
+    entry = last_price
+    sl_price = entry * (1 - 0.005) if signal == "buy" else entry * (1 + 0.005)  # 0.5%
+    tp_price = entry * (1 + 0.010) if signal == "buy" else entry * (1 - 0.010)  # 1.0%
+
+    success = mt5_bridge.write_signal({
+        "signal": signal,
+        "symbol": "Volatility 100 Index",
+        "price": entry,
+        "sl_price": round(sl_price, 5),
+        "tp_price": round(tp_price, 5)
+    })
+
+    if success:
+        logger.info(f"SUCCESS MT5 SIGNAL SENT → {signal.upper()} Volatility 100 Index")
 
 def place_trade(signal: str, strategy: str = "scalper", confidence: int = 80):
     """Place a trade through Deriv connection with proper risk management"""
@@ -342,6 +339,15 @@ def place_trade(signal: str, strategy: str = "scalper", confidence: int = 80):
                 "tp": take_profit,
                 "rr_ratio": risk_reward
             })
+
+        # === FORCE TEST MT5 SIGNAL AFTER 10 SECONDS ===
+    if config.IS_DEMO:
+        def force_mt5_test():
+            time.sleep(10)
+            logger.info("FORCING MT5 TEST SIGNAL...")
+            send_mt5_signal("buy", "scalper", 95)
+    
+        threading.Thread(target=force_mt5_test, daemon=True).start()    
         
         # Simulate trade result after delay with proper exit reason tracking
         def simulate_trade_result():

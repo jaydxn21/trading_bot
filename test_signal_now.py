@@ -6,7 +6,7 @@ import requests
 import hmac
 import hashlib
 
-GITHUB_TOKEN = "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"
+GITHUB_TOKEN = "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"
 REPO = "jaydxn21/trading_bot"
 FILE_PATH = "signals.json"
 BRANCH = "main"

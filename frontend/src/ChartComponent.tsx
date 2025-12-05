@@ -1,4 +1,3 @@
-// src/ChartComponent.tsx
 import React, { useEffect, useRef } from "react";
 import {
   createChart,
@@ -8,6 +7,8 @@ import {
   CandlestickData,
   LineData,
   HistogramData,
+  UTCTimestamp,
+  IPriceLine,
 } from "lightweight-charts";
 
 interface Props {
@@ -15,154 +16,200 @@ interface Props {
   showVolume: boolean;
   showSMA: boolean;
   showRSI: boolean;
+  currentPrice?: number | null;
 }
 
-export default function ChartComponent({ candleData, showVolume, showSMA, showRSI }: Props) {
-  const ref = useRef<HTMLDivElement>(null);
-  const chart = useRef<IChartApi | null>(null);
-  const series = useRef<Map<string, ISeriesApi<any>>>(new Map());
+export default function ChartComponent({
+  candleData,
+  showVolume,
+  showSMA,
+  showRSI,
+  currentPrice,
+}: Props) {
+  const chartContainerRef = useRef<HTMLDivElement>(null);
+  const chartRef = useRef<IChartApi | null>(null);
+  const seriesRef = useRef<Map<string, ISeriesApi<any>>>(new Map());
+  const priceLineRef = useRef<IPriceLine | null>(null);
 
+  // Create chart once
   useEffect(() => {
-    if (!ref.current) return;
+    if (!chartContainerRef.current) return;
 
-    chart.current = createChart(ref.current, {
-      width: ref.current.clientWidth,
+    const chart = createChart(chartContainerRef.current, {
+      width: chartContainerRef.current.clientWidth,
       height: 500,
       layout: {
         background: { type: ColorType.Solid, color: "#0a0a0a" },
-        textColor: "#aaa",
+        textColor: "#d1d4dc",
       },
-      grid: { vertLines: { color: "#1a1a1a" }, horzLines: { color: "#1a1a1a" } },
-      timeScale: { borderColor: "#333", timeVisible: true, secondsVisible: false },
-      rightPriceScale: { borderColor: "#333" },
+      grid: {
+        vertLines: { color: "#1f1f2e" },
+        horzLines: { color: "#1f1f2e" },
+      },
       crosshair: { mode: 1 },
+      timeScale: {
+        borderColor: "#333",
+        timeVisible: true,
+        secondsVisible: false,
+      },
+      rightPriceScale: { borderColor: "#333" },
     });
 
-    // Candlesticks
-    series.current.set(
-      "candle",
-      chart.current.addCandlestickSeries({
-        upColor: "#00c853",
-        downColor: "#ff1744",
-        borderVisible: false,
-        wickUpColor: "#00c853",
-        wickDownColor: "#ff1744",
-      })
-    );
+    chartRef.current = chart;
 
-    // Volume
-    series.current.set(
-      "volume",
-      chart.current.addHistogramSeries({
-        color: "#00d4ff",
-        priceScaleId: "",
-        priceFormat: { type: "volume" },
-      })
-    );
-    series.current.get("volume")!.priceScale().applyOptions({
-      scaleMargins: { top: 0.8, bottom: 0 },
+    const candleSeries = chart.addCandlestickSeries({
+      upColor: "#00ff9d",
+      downColor: "#ff1744",
+      borderVisible: false,
+      wickUpColor: "#00ff9d",
+      wickDownColor: "#ff1744",
     });
+    seriesRef.current.set("candle", candleSeries);
 
-    // SMA
-    series.current.set("sma", chart.current.addLineSeries({ color: "#00d4ff", lineWidth: 2 }));
+    const volumeSeries = chart.addHistogramSeries({
+      color: "#26a69a",
+      priceFormat: { type: "volume" },
+      priceScaleId: "",
+    });
+    volumeSeries.priceScale().applyOptions({
+      scaleMargins: { top: 0.85, bottom: 0 },
+    });
+    seriesRef.current.set("volume", volumeSeries);
 
-    // RSI
-    series.current.set(
-      "rsi",
-      chart.current.addLineSeries({
-        color: "#ff9100",
-        lineWidth: 2,
-        priceScaleId: "rsi",
-      })
-    );
-    chart.current.priceScale("rsi").applyOptions({
+    const smaSeries = chart.addLineSeries({
+      color: "#00d4ff",
+      lineWidth: 2,
+    });
+    seriesRef.current.set("sma", smaSeries);
+
+    const rsiSeries = chart.addLineSeries({
+      color: "#ff9100",
+      lineWidth: 2,
+      priceScaleId: "rsi",
+    });
+    chart.priceScale("rsi").applyOptions({
       scaleMargins: { top: 0.1, bottom: 0.9 },
-      visible: showRSI,
     });
+    seriesRef.current.set("rsi", rsiSeries);
 
-    const resize = () => chart.current!.applyOptions({ width: ref.current!.clientWidth });
-    window.addEventListener("resize", resize);
+    rsiSeries.createPriceLine({ price: 70, color: "#ff1744", lineWidth: 1, lineStyle: 2 });
+    rsiSeries.createPriceLine({ price: 30, color: "#00c853", lineWidth: 1, lineStyle: 2 });
+
+    const handleResize = () => {
+      if (chartContainerRef.current) {
+        chart.applyOptions({ width: chartContainerRef.current.clientWidth });
+      }
+    };
+    window.addEventListener("resize", handleResize);
 
     return () => {
-      window.removeEventListener("resize", resize);
-      chart.current?.remove();
+      window.removeEventListener("resize", handleResize);
+      chart.remove();
     };
   }, []);
 
+  // Update data
   useEffect(() => {
-    if (!chart.current || candleData.length === 0) return;
+    if (!chartRef.current || candleData.length === 0) return;
 
-    // CONVERT STRINGS → NUMBERS
-    const formatted: CandlestickData[] = candleData.map((c: any) => ({
-      time: c.time,
+    const candleSeries = seriesRef.current.get("candle")!;
+
+    // Candles
+    const formattedCandles: CandlestickData[] = candleData.map((c: any) => ({
+      time: c.time as UTCTimestamp,
       open: parseFloat(c.open),
       high: parseFloat(c.high),
       low: parseFloat(c.low),
       close: parseFloat(c.close),
     }));
+    candleSeries.setData(formattedCandles);
 
-    const candle = series.current.get("candle")!;
-    candle.setData(formatted);
+    // Volume
+    const volData: HistogramData[] = candleData.map((c: any) => {
+      const open = parseFloat(c.open);
+      const close = parseFloat(c.close);
+      return {
+        time: c.time as UTCTimestamp,
+        value: Math.abs(close - open) * 1800,
+        color: close >= open ? "rgba(0, 255, 157, 0.5)" : "rgba(255, 23, 68, 0.5)",
+      };
+    });
+    seriesRef.current.get("volume")!.setData(volData);
+    seriesRef.current.get("volume")!.applyOptions({ visible: showVolume });
 
-    // VOLUME
-    if (showVolume) {
-      const volData: HistogramData[] = candleData.map((c: any) => ({
-        time: c.time,
-        value: Math.abs(parseFloat(c.close) - parseFloat(c.open)) * 1500,
-        color: parseFloat(c.close) > parseFloat(c.open) ? "rgba(0,200,83,0.6)" : "rgba(255,23,68,0.6)",
-      }));
-      series.current.get("volume")!.setData(volData);
-    }
-    series.current.get("volume")!.applyOptions({ visible: showVolume });
-
-    // SMA
+    // SMA20
     if (showSMA && candleData.length >= 20) {
-      const closes = candleData.map((c: any) => parseFloat(c.close));
-      const sma20: LineData[] = closes
-        .map((_, i) => {
-          if (i < 19) return null;
-          const sum = closes.slice(i - 19, i + 1).reduce((a, b) => a + b, 0);
-          return { time: candleData[i].time, value: sum / 20 };
-        })
-        .filter(Boolean) as LineData[];
-      series.current.get("sma")!.setData(sma20);
+      const closes = candleData.map((c) => parseFloat(c.close));
+      const smaData: LineData[] = closes.slice(19).map((_, i) => {
+        const sum = closes.slice(i, i + 20).reduce((a, b) => a + b, 0);
+        return {
+          time: candleData[i + 19].time as UTCTimestamp,
+          value: sum / 20,
+        };
+      });
+      seriesRef.current.get("sma")!.setData(smaData);
     }
-    series.current.get("sma")!.applyOptions({ visible: showSMA });
+    seriesRef.current.get("sma")!.applyOptions({ visible: showSMA });
 
-    // RSI (REAL CALCULATION)
-    if (showRSI && candleData.length >= 14) {
-      const closes = candleData.map((c: any) => parseFloat(c.close));
-      const rsi14: LineData[] = [];
-      let gains = 0;
-      let losses = 0;
+    // RSI14 (Wilder)
+    if (showRSI && candleData.length >= 15) {
+      const closes = candleData.map((c) => parseFloat(c.close));
+      const rsiData: LineData[] = [];
+      let avgGain = 0;
+      let avgLoss = 0;
 
       for (let i = 1; i < closes.length; i++) {
         const diff = closes[i] - closes[i - 1];
+        const gain = diff > 0 ? diff : 0;
+        const loss = diff < 0 ? -diff : 0;
+
         if (i === 14) {
-          gains /= 14;
-          losses /= 14;
+          avgGain = gain / 14;
+          avgLoss = loss / 14;
+        } else if (i > 14) {
+          avgGain = (avgGain * 13 + gain) / 14;
+          avgLoss = (avgLoss * 13 + loss) / 14;
         }
-        if (diff > 0) gains += diff;
-        else losses -= diff;
 
         if (i >= 14) {
-          const avgGain = gains / 14;
-          const avgLoss = losses / 14;
           const rs = avgLoss === 0 ? 100 : avgGain / avgLoss;
-          const rsi = 100 - 100 / (1 + rs);
-          rsi14.push({ time: candleData[i].time, value: rsi });
-
-          // Smooth for next
-          gains = (gains - gains / 14) + (diff > 0 ? diff : 0);
-          losses = (losses - losses / 14) + (diff < 0 ? -diff : 0);
+          const rsiVal = avgLoss === 0 ? 100 : 100 - 100 / (1 + rs);
+          rsiData.push({
+            time: candleData[i].time as UTCTimestamp,
+            value: rsiVal,
+          });
         }
       }
-      series.current.get("rsi")!.setData(rsi14);
+      seriesRef.current.get("rsi")!.setData(rsiData);
     }
-    series.current.get("rsi")!.applyOptions({ visible: showRSI });
+    seriesRef.current.get("rsi")!.applyOptions({ visible: showRSI });
 
-    chart.current.timeScale().fitContent();
-  }, [candleData, showVolume, showSMA, showRSI]);
+    // Live Price Line — only if valid
+    if (priceLineRef.current) {
+      candleSeries.removePriceLine(priceLineRef.current);
+      priceLineRef.current = null;
+    }
 
-  return <div ref={ref} style={{ width: "100%", height: 500 }} />;
+    if (typeof currentPrice === "number" && !isNaN(currentPrice)) {
+      priceLineRef.current = candleSeries.createPriceLine({
+        price: currentPrice,
+        color: "#00ffff",
+        lineWidth: 2,
+        lineStyle: 0,
+        axisLabelVisible: true,
+        axisLabelColor: "#000",
+        axisLabelTextColor: "#00ffff",
+        title: "LIVE",
+      });
+    }
+
+    chartRef.current!.timeScale().fitContent();
+  }, [candleData, showVolume, showSMA, showRSI, currentPrice]);
+
+  return (
+    <div
+      ref={chartContainerRef}
+      style={{ width: "100%", height: "500px", position: "relative" }}
+    />
+  );
 }

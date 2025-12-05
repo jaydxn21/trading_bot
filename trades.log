@@ -90,3 +90,61 @@
 2025-12-05 11:45:41,480 | INFO     | websocket    | Websocket connected
 2025-12-05 11:45:41,481 | INFO     | deriv_connection | Demo mode - skipping authentication
 2025-12-05 11:45:41,481 | INFO     | deriv_connection | Connection state: connecting → authenticated Demo mode
+2025-12-05 12:22:03,909 | INFO     | Telegram     | Telegram notifications ENABLED
+2025-12-05 12:22:03,942 | INFO     | QUANTUMTRADER | MT5 Bridge loaded successfully
+2025-12-05 12:22:03,942 | INFO     | strategies   | Loading trading strategies...
+2025-12-05 12:22:03,944 | INFO     | strategies   | Loaded: emergency ← Emergency_Overbought_Strategy (emergency_overbought.py)
+2025-12-05 12:22:03,944 | WARNING  | strategies   | Duplicate strategy key 'emergency' – keeping the first one (Emergency_Overbought_Strategy)
+2025-12-05 12:22:03,952 | INFO     | strategies   | Loaded: snr_adx ← Enhanced_SNR_ADX_Strategy (enhanced_snr_adx.py)
+2025-12-05 12:22:03,953 | WARNING  | strategies   | Duplicate strategy key 'snr_adx' – keeping the first one (Enhanced_SNR_ADX_Strategy)
+2025-12-05 12:22:03,963 | INFO     | strategies   | Loaded: scalper ← ScalperStrategy (scalper.py)
+2025-12-05 12:22:03,966 | INFO     | strategies   | Loaded: enhanced_sma ← Enhanced_SMA_Strategy (sma.py)
+2025-12-05 12:22:03,968 | INFO     | strategies   | Loaded: super_scalper ← SuperScalperStrategy (super_scalper.py)
+2025-12-05 12:22:03,981 | INFO     | strategies   | Loaded: vol_mean_reversion ← VolMeanReversionStrategy (vol_mean_reversion.py)
+2025-12-05 12:22:03,984 | INFO     | strategies   | All required core strategies are loaded.
+2025-12-05 12:22:03,985 | INFO     | strategies   | Total strategies loaded: 6
+2025-12-05 12:22:03,985 | INFO     | strategies   | Available keys: ['emergency', 'enhanced_sma', 'scalper', 'snr_adx', 'super_scalper', 'vol_mean_reversion']
+2025-12-05 12:22:04,038 | WARNING  | ai_core      | No ML model found. Using dummy predictor.
+2025-12-05 12:22:09,805 | WARNING  | ai_core      | openai package not installed. AI optimizer disabled.
+2025-12-05 12:22:09,805 | INFO     | trade_manager | [INIT] Loaded strategy: scalper
+2025-12-05 12:22:09,805 | INFO     | trade_manager | [INIT] Loaded strategy: super_scalper
+2025-12-05 12:22:09,805 | INFO     | deriv_connection | DerivConnection initialized: Demo=True, AppID=111074
+2025-12-05 12:22:09,806 | INFO     | deriv_connection | Connection state: disconnected → connecting Starting connection...
+2025-12-05 12:22:10,129 | INFO     | websocket    | Websocket connected
+2025-12-05 12:22:10,130 | INFO     | deriv_connection | Demo mode - skipping authentication
+2025-12-05 12:22:10,130 | INFO     | deriv_connection | Connection state: connecting → authenticated Demo mode
+2025-12-05 14:33:59,433 | ERROR    | MT5Bridge    | MT5 Bridge: Missing required fields
+2025-12-05 14:33:59,545 | INFO     | QUANTUMTRADER | DEMO TRADE: CALL $0.2 @ 103.10452 | manual
+2025-12-05 14:40:25,622 | ERROR    | MT5Bridge    | MT5 Bridge: Missing required fields
+2025-12-05 15:21:59,054 | ERROR    | MT5Bridge    | MT5 Bridge: Missing required fields
+2025-12-05 15:31:15,434 | ERROR    | MT5Bridge    | MT5 Bridge: Missing required fields
+2025-12-05 15:52:40,479 | ERROR    | MT5Bridge    | MT5 Bridge: Missing required fields
+2025-12-05 16:11:53,141 | INFO     | Telegram     | Telegram notifications ENABLED
+2025-12-05 16:11:53,160 | INFO     | QUANTUMTRADER | MT5 Bridge loaded successfully
+2025-12-05 16:11:53,161 | INFO     | strategies   | Loading trading strategies...
+2025-12-05 16:11:53,186 | INFO     | strategies   | Loaded: emergency ← Emergency_Overbought_Strategy (emergency_overbought.py)
+2025-12-05 16:11:53,186 | WARNING  | strategies   | Duplicate strategy key 'emergency' – keeping the first one (Emergency_Overbought_Strategy)
+2025-12-05 16:11:53,212 | INFO     | strategies   | Loaded: snr_adx ← Enhanced_SNR_ADX_Strategy (enhanced_snr_adx.py)
+2025-12-05 16:11:53,213 | WARNING  | strategies   | Duplicate strategy key 'snr_adx' – keeping the first one (Enhanced_SNR_ADX_Strategy)
+2025-12-05 16:11:53,214 | INFO     | strategies   | Loaded: scalper ← ScalperStrategy (scalper.py)
+2025-12-05 16:11:53,216 | INFO     | strategies   | Loaded: enhanced_sma ← Enhanced_SMA_Strategy (sma.py)
+2025-12-05 16:11:53,218 | INFO     | strategies   | Loaded: super_scalper ← SuperScalperStrategy (super_scalper.py)
+2025-12-05 16:11:53,221 | INFO     | strategies   | Loaded: vol_mean_reversion ← VolMeanReversionStrategy (vol_mean_reversion.py)
+2025-12-05 16:11:53,222 | INFO     | strategies   | All required core strategies are loaded.
+2025-12-05 16:11:53,222 | INFO     | strategies   | Total strategies loaded: 6
+2025-12-05 16:11:53,222 | INFO     | strategies   | Available keys: ['emergency', 'enhanced_sma', 'scalper', 'snr_adx', 'super_scalper', 'vol_mean_reversion']
+2025-12-05 16:11:53,240 | WARNING  | ai_core      | No ML model found. Using dummy predictor.
+2025-12-05 16:11:58,484 | WARNING  | ai_core      | openai package not installed. AI optimizer disabled.
+2025-12-05 16:11:58,484 | INFO     | trade_manager | [INIT] Loaded strategy: scalper
+2025-12-05 16:11:58,485 | INFO     | trade_manager | [INIT] Loaded strategy: super_scalper
+2025-12-05 16:11:58,485 | INFO     | deriv_connection | DerivConnection initialized: Demo=True, AppID=111074
+2025-12-05 16:11:58,485 | INFO     | deriv_connection | Connection state: disconnected → connecting Starting connection...
+2025-12-05 16:11:58,927 | INFO     | websocket    | Websocket connected
+2025-12-05 16:11:58,928 | INFO     | deriv_connection | Demo mode - skipping authentication
+2025-12-05 16:11:58,928 | INFO     | deriv_connection | Connection state: connecting → authenticated Demo mode
+2025-12-05 16:13:22,740 | INFO     | MT5Bridge    | Sending to GitHub: BUY R_100 @ 97.89329487671895
+2025-12-05 16:13:23,579 | INFO     | MT5Bridge    | MT5 BRIDGE → SUCCESS! signals.json updated
+2025-12-05 16:13:23,580 | INFO     | QUANTUMTRADER | MT5 SIGNAL → BUY R_100 | test | conf:95%
+2025-12-05 16:33:56,628 | INFO     | MT5Bridge    | Sending to GitHub: BUY R_100 @ 97.89329487671895
+2025-12-05 16:33:57,322 | INFO     | MT5Bridge    | MT5 BRIDGE → SUCCESS! signals.json updated
+2025-12-05 16:33:57,322 | INFO     | QUANTUMTRADER | MT5 SIGNAL → BUY R_100 | test | conf:95%

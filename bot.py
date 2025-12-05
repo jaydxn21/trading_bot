@@ -132,36 +132,29 @@ def send_mt5_signal_secure(signal: str, strategy: str, confidence: int):
     if not MT5_BRIDGE_ENABLED or TRADING_HALTED:
         return False
 
+    direction = "BUY" if signal == "buy" else "SELL"
     entry = last_price
     sl_price = round(entry * (1 - 0.005) if signal == "buy" else entry * (1 + 0.005), 5)
     tp_price = round(entry * (1 + 0.010) if signal == "buy" else entry * (1 - 0.010), 5)
 
+    # THIS IS WHAT MQL5 EA EXPECTS — FLAT STRUCTURE!
     payload = {
-        "signal": signal,
+        "action": direction,
         "symbol": config.SYMBOL,
         "price": entry,
         "sl_price": sl_price,
         "tp_price": tp_price,
         "strategy": strategy,
-        "confidence": confidence,
         "timestamp": int(time.time())
     }
 
-    message = json.dumps(payload, separators=(',', ':'))
-    signature = hmac.new(
-        MT5_SECRET_KEY.encode('utf-8'),
-        message.encode('utf-8'),
-        hashlib.sha256
-    ).hexdigest()
-
-    signed_payload = {
-        "data": payload,
-        "signature": signature
-    }
-
-    success = mt5_bridge.write_signal(signed_payload)
+    # Direct call — no double wrapping!
+    success = mt5_bridge.write_signal(payload)
+    
     if success:
-        logger.info(f"MT5 SIGNAL SECURE → {signal.upper()} | {strategy} | {confidence}%")
+        logger.info(f"MT5 SIGNAL → {direction} {config.SYMBOL} | {strategy} | conf:{confidence}%")
+        socketio.emit('mt5_signal_sent')
+    
     return success
 
 # ========================= SAFETY CHECKS =========================
@@ -383,10 +376,27 @@ def manual_trade(data):
 
 @socketio.on('test_mt5_signal')
 def test_mt5():
-    if send_mt5_signal_secure("buy", "test", 95):
-        socketio.emit('system_status', {'message': 'MT5 Test Signal Sent'})
+    # Temporarily disable auto-trading during test
+    was_demo = config.IS_DEMO
+    was_trading = config.TRADING_ENABLED
+    
+    config.IS_DEMO = False           # prevent demo trade
+    config.TRADING_ENABLED = False   # prevent any trade
+    
+    success = send_mt5_signal_secure("buy", "test", 95)
+    
+    # Restore original settings
+    config.IS_DEMO = was_demo
+    config.TRADING_ENABLED = was_trading
+    
+    if success:
+        socketio.emit('mt5_signal_sent')  # Only this — no fake trade_result!
     else:
-        socketio.emit('system_status', {'message': 'MT5 Bridge Failed'})
+        socketio.emit('system_alert', {
+            'type': 'error',
+            'title': 'MT5 Bridge Failed',
+            'message': 'Check GitHub token or network'
+        })
 
 # ========================= STARTUP =========================
 def initialize_bot():

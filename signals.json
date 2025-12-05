@@ -1,18 +1,1 @@
-[
-  {
-	"symbol": "R_100",
-	"action": "BUY",
-	"price": 100.63349,
-	"sl_price": 100.33159,
-	"tp_price": 100.93539,
-	"timestamp": "2025-11-26T07:11:11.763767"
-  },
-  {
-	"symbol": "Volatility 100 Index",
-	"action": "BUY",
-	"price": 705.02,
-	"sl_price": 701.4949,
-	"tp_price": 712.0702,
-	"timestamp": 1764417802
-  }
-]
+{"action":"BUY","symbol":"Volatility 100 Index","price":"100.5","sl_price":"99.7","tp_price":"101.3","strategy":"test","timestamp":"1764950275","signature":"dfb0aa4b1161a167c58ae34af1c77d91c0b18f262c42d7524b7de14de918a80e"}

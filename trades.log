@@ -1,0 +1,92 @@
+2025-12-03 06:43:56,948 | INFO     | Telegram     | Telegram notifications ENABLED
+2025-12-03 06:43:57,126 | INFO     | QUANTUMTRADER | MT5 Bridge loaded successfully
+2025-12-03 06:43:57,126 | INFO     | strategies   | Loading trading strategies...
+2025-12-03 06:43:57,127 | INFO     | strategies   | Loaded: emergency ← Emergency_Overbought_Strategy (emergency_overbought.py)
+2025-12-03 06:43:57,128 | WARNING  | strategies   | Duplicate strategy key 'emergency' – keeping the first one (Emergency_Overbought_Strategy)
+2025-12-03 06:43:57,167 | INFO     | strategies   | Loaded: snr_adx ← Enhanced_SNR_ADX_Strategy (enhanced_snr_adx.py)
+2025-12-03 06:43:57,167 | WARNING  | strategies   | Duplicate strategy key 'snr_adx' – keeping the first one (Enhanced_SNR_ADX_Strategy)
+2025-12-03 06:43:57,168 | INFO     | strategies   | Loaded: scalper ← ScalperStrategy (scalper.py)
+2025-12-03 06:43:57,169 | INFO     | strategies   | Loaded: enhanced_sma ← Enhanced_SMA_Strategy (sma.py)
+2025-12-03 06:43:57,181 | INFO     | strategies   | Loaded: super_scalper ← SuperScalperStrategy (super_scalper.py)
+2025-12-03 06:43:57,200 | INFO     | strategies   | Loaded: vol_mean_reversion ← VolMeanReversionStrategy (vol_mean_reversion.py)
+2025-12-03 06:43:57,200 | INFO     | strategies   | All required core strategies are loaded.
+2025-12-03 06:43:57,201 | INFO     | strategies   | Total strategies loaded: 6
+2025-12-03 06:43:57,201 | INFO     | strategies   | Available keys: ['emergency', 'enhanced_sma', 'scalper', 'snr_adx', 'super_scalper', 'vol_mean_reversion']
+2025-12-03 06:43:57,219 | WARNING  | ai_core      | No ML model found. Using dummy predictor.
+2025-12-03 06:44:15,920 | WARNING  | ai_core      | openai package not installed. AI optimizer disabled.
+2025-12-03 06:44:15,962 | INFO     | trade_manager | [INIT] Loaded strategy: scalper
+2025-12-03 06:44:15,962 | INFO     | trade_manager | [INIT] Loaded strategy: super_scalper
+2025-12-03 06:44:15,963 | INFO     | deriv_connection | DerivConnection initialized: Demo=True, AppID=111074
+2025-12-03 06:44:15,963 | INFO     | deriv_connection | Connection state: disconnected → connecting Starting connection...
+2025-12-03 06:44:16,492 | INFO     | websocket    | Websocket connected
+2025-12-03 06:44:16,493 | INFO     | deriv_connection | Demo mode - skipping authentication
+2025-12-03 06:44:16,493 | INFO     | deriv_connection | Connection state: connecting → authenticated Demo mode
+2025-12-03 06:49:28,175 | INFO     | Telegram     | Telegram notifications ENABLED
+2025-12-03 06:49:28,181 | INFO     | QUANTUMTRADER | MT5 Bridge loaded successfully
+2025-12-03 06:49:28,184 | INFO     | strategies   | Loading trading strategies...
+2025-12-03 06:49:28,186 | INFO     | strategies   | Loaded: emergency ← Emergency_Overbought_Strategy (emergency_overbought.py)
+2025-12-03 06:49:28,186 | WARNING  | strategies   | Duplicate strategy key 'emergency' – keeping the first one (Emergency_Overbought_Strategy)
+2025-12-03 06:49:28,191 | INFO     | strategies   | Loaded: snr_adx ← Enhanced_SNR_ADX_Strategy (enhanced_snr_adx.py)
+2025-12-03 06:49:28,192 | WARNING  | strategies   | Duplicate strategy key 'snr_adx' – keeping the first one (Enhanced_SNR_ADX_Strategy)
+2025-12-03 06:49:28,193 | INFO     | strategies   | Loaded: scalper ← ScalperStrategy (scalper.py)
+2025-12-03 06:49:28,195 | INFO     | strategies   | Loaded: enhanced_sma ← Enhanced_SMA_Strategy (sma.py)
+2025-12-03 06:49:28,196 | INFO     | strategies   | Loaded: super_scalper ← SuperScalperStrategy (super_scalper.py)
+2025-12-03 06:49:28,215 | INFO     | strategies   | Loaded: vol_mean_reversion ← VolMeanReversionStrategy (vol_mean_reversion.py)
+2025-12-03 06:49:28,216 | INFO     | strategies   | All required core strategies are loaded.
+2025-12-03 06:49:28,216 | INFO     | strategies   | Total strategies loaded: 6
+2025-12-03 06:49:28,217 | INFO     | strategies   | Available keys: ['emergency', 'enhanced_sma', 'scalper', 'snr_adx', 'super_scalper', 'vol_mean_reversion']
+2025-12-03 06:49:28,234 | WARNING  | ai_core      | No ML model found. Using dummy predictor.
+2025-12-03 06:49:35,490 | WARNING  | ai_core      | openai package not installed. AI optimizer disabled.
+2025-12-03 06:49:35,490 | INFO     | trade_manager | [INIT] Loaded strategy: scalper
+2025-12-03 06:49:35,493 | INFO     | trade_manager | [INIT] Loaded strategy: super_scalper
+2025-12-03 06:49:35,494 | INFO     | deriv_connection | DerivConnection initialized: Demo=True, AppID=111074
+2025-12-03 06:49:35,495 | INFO     | deriv_connection | Connection state: disconnected → connecting Starting connection...
+2025-12-03 06:49:35,922 | INFO     | websocket    | Websocket connected
+2025-12-03 06:49:35,923 | INFO     | deriv_connection | Demo mode - skipping authentication
+2025-12-03 06:49:35,923 | INFO     | deriv_connection | Connection state: connecting → authenticated Demo mode
+2025-12-03 06:59:00,904 | INFO     | Telegram     | Telegram notifications ENABLED
+2025-12-03 06:59:00,925 | INFO     | QUANTUMTRADER | MT5 Bridge loaded successfully
+2025-12-03 06:59:00,926 | INFO     | strategies   | Loading trading strategies...
+2025-12-03 06:59:00,928 | INFO     | strategies   | Loaded: emergency ← Emergency_Overbought_Strategy (emergency_overbought.py)
+2025-12-03 06:59:00,928 | WARNING  | strategies   | Duplicate strategy key 'emergency' – keeping the first one (Emergency_Overbought_Strategy)
+2025-12-03 06:59:00,929 | INFO     | strategies   | Loaded: snr_adx ← Enhanced_SNR_ADX_Strategy (enhanced_snr_adx.py)
+2025-12-03 06:59:00,930 | WARNING  | strategies   | Duplicate strategy key 'snr_adx' – keeping the first one (Enhanced_SNR_ADX_Strategy)
+2025-12-03 06:59:00,932 | INFO     | strategies   | Loaded: scalper ← ScalperStrategy (scalper.py)
+2025-12-03 06:59:00,934 | INFO     | strategies   | Loaded: enhanced_sma ← Enhanced_SMA_Strategy (sma.py)
+2025-12-03 06:59:00,935 | INFO     | strategies   | Loaded: super_scalper ← SuperScalperStrategy (super_scalper.py)
+2025-12-03 06:59:00,939 | INFO     | strategies   | Loaded: vol_mean_reversion ← VolMeanReversionStrategy (vol_mean_reversion.py)
+2025-12-03 06:59:00,940 | INFO     | strategies   | All required core strategies are loaded.
+2025-12-03 06:59:00,941 | INFO     | strategies   | Total strategies loaded: 6
+2025-12-03 06:59:00,941 | INFO     | strategies   | Available keys: ['emergency', 'enhanced_sma', 'scalper', 'snr_adx', 'super_scalper', 'vol_mean_reversion']
+2025-12-03 06:59:00,979 | WARNING  | ai_core      | No ML model found. Using dummy predictor.
+2025-12-03 06:59:07,885 | WARNING  | ai_core      | openai package not installed. AI optimizer disabled.
+2025-12-03 06:59:07,885 | INFO     | trade_manager | [INIT] Loaded strategy: scalper
+2025-12-03 06:59:07,885 | INFO     | trade_manager | [INIT] Loaded strategy: super_scalper
+2025-12-03 06:59:07,886 | INFO     | deriv_connection | DerivConnection initialized: Demo=True, AppID=111074
+2025-12-03 06:59:07,886 | INFO     | deriv_connection | Connection state: disconnected → connecting Starting connection...
+2025-12-03 06:59:08,256 | INFO     | websocket    | Websocket connected
+2025-12-03 06:59:08,257 | INFO     | deriv_connection | Demo mode - skipping authentication
+2025-12-03 06:59:08,257 | INFO     | deriv_connection | Connection state: connecting → authenticated Demo mode
+2025-12-05 11:45:04,534 | INFO     | Telegram     | Telegram notifications ENABLED
+2025-12-05 11:45:04,594 | INFO     | QUANTUMTRADER | MT5 Bridge loaded successfully
+2025-12-05 11:45:04,595 | INFO     | strategies   | Loading trading strategies...
+2025-12-05 11:45:04,613 | INFO     | strategies   | Loaded: emergency ← Emergency_Overbought_Strategy (emergency_overbought.py)
+2025-12-05 11:45:04,613 | WARNING  | strategies   | Duplicate strategy key 'emergency' – keeping the first one (Emergency_Overbought_Strategy)
+2025-12-05 11:45:04,632 | INFO     | strategies   | Loaded: snr_adx ← Enhanced_SNR_ADX_Strategy (enhanced_snr_adx.py)
+2025-12-05 11:45:04,632 | WARNING  | strategies   | Duplicate strategy key 'snr_adx' – keeping the first one (Enhanced_SNR_ADX_Strategy)
+2025-12-05 11:45:04,634 | INFO     | strategies   | Loaded: scalper ← ScalperStrategy (scalper.py)
+2025-12-05 11:45:04,637 | INFO     | strategies   | Loaded: enhanced_sma ← Enhanced_SMA_Strategy (sma.py)
+2025-12-05 11:45:04,641 | INFO     | strategies   | Loaded: super_scalper ← SuperScalperStrategy (super_scalper.py)
+2025-12-05 11:45:04,643 | INFO     | strategies   | Loaded: vol_mean_reversion ← VolMeanReversionStrategy (vol_mean_reversion.py)
+2025-12-05 11:45:04,643 | INFO     | strategies   | All required core strategies are loaded.
+2025-12-05 11:45:04,643 | INFO     | strategies   | Total strategies loaded: 6
+2025-12-05 11:45:04,644 | INFO     | strategies   | Available keys: ['emergency', 'enhanced_sma', 'scalper', 'snr_adx', 'super_scalper', 'vol_mean_reversion']
+2025-12-05 11:45:04,681 | WARNING  | ai_core      | No ML model found. Using dummy predictor.
+2025-12-05 11:45:40,991 | WARNING  | ai_core      | openai package not installed. AI optimizer disabled.
+2025-12-05 11:45:40,991 | INFO     | trade_manager | [INIT] Loaded strategy: scalper
+2025-12-05 11:45:40,992 | INFO     | trade_manager | [INIT] Loaded strategy: super_scalper
+2025-12-05 11:45:40,992 | INFO     | deriv_connection | DerivConnection initialized: Demo=True, AppID=111074
+2025-12-05 11:45:40,992 | INFO     | deriv_connection | Connection state: disconnected → connecting Starting connection...
+2025-12-05 11:45:41,480 | INFO     | websocket    | Websocket connected
+2025-12-05 11:45:41,481 | INFO     | deriv_connection | Demo mode - skipping authentication
+2025-12-05 11:45:41,481 | INFO     | deriv_connection | Connection state: connecting → authenticated Demo mode

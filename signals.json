@@ -1,1 +1,1 @@
-{"action":"BUY","symbol":"Volatility 100 Index","price":"100.5","sl_price":"99.7","tp_price":"101.3","strategy":"test","timestamp":"1764950275","signature":"dfb0aa4b1161a167c58ae34af1c77d91c0b18f262c42d7524b7de14de918a80e"}
+{"action":"BUY","price":97.89329487671895,"sl_price":"97.40383","strategy":"test","symbol":"R_100","timestamp":"1764970435","tp_price":"98.87223"}

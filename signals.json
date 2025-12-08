@@ -4,8 +4,8 @@
   "price": 97.52841,
   "sl_price": 97.04077,
   "tp_price": 98.50369,
-  "strategy": "super_scalper",
-  "timestamp": 1765157822,
-  "confidence": 94,
-  "signature": "D88AC5C1638F66754969F756029D6268971AAFA1FCDECE39144BEE7A1702D405"
+  "strategy": "NUCLEAR_OVERRIDE",
+  "timestamp": 1765159096,
+  "confidence": 99,
+  "signature": "C76B9487EAB7329C51FDCFAF0B7B5715211EB7C8CD5EDE43CC51BA1D1970DB63"
 }

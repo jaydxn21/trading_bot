@@ -1,1 +1,11 @@
-{"action":"BUY","price":103.29266666987067,"sl_price":"102.7762","strategy":"test","symbol":"R_100","timestamp":"1764973206","tp_price":"104.32559"}
+{
+  "action": "BUY",
+  "symbol": "R_100",
+  "price": 97.52841,
+  "sl_price": 97.04077,
+  "tp_price": 98.50369,
+  "strategy": "super_scalper",
+  "timestamp": 1765157494,
+  "confidence": 94,
+  "signature": "D737BFF14E7EA9A6CD7742F342D732C179E71DD5FFEFFF1DF925D60F9E2A7895"
+}

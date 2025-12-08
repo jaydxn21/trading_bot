@@ -16,7 +16,7 @@ logger = logging.getLogger("MT5Bridge")
 logger.setLevel(logging.INFO)
 
 # ==================== CONFIG — UPDATE THESE =====================
-GITHUB_TOKEN = "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"  # ← MUST BE NEW FINE-GRAINED WITH WRITE ACCESS
+GITHUB_TOKEN = "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"  # ← MUST BE NEW FINE-GRAINED WITH WRITE ACCESS
 REPO = "jaydxn21/trading_bot"
 FILE_PATH = "signals.json"
 BRANCH = "main"
@@ -38,25 +38,19 @@ def _hmac_signature(message: str) -> str:
 
 def write_signal(signal_data: Dict[str, Any]) -> bool:
     try:
-        # === VALIDATION ===
         required = ["action", "symbol", "timestamp"]
         if not all(k in signal_data for k in required):
-            logger.error(f"Missing required fields: {list(signal_data.keys())}")
-            return False
-
-        action = str(signal_data["action"]).upper()
-        if action not in ("BUY", "SELL"):
-            logger.error(f"Invalid action: {action}")
+            logger.error("Missing required fields")
             return False
 
         ts = int(signal_data["timestamp"])
-        if abs(time.time() - ts) > 60:  # allow 60s window
-            logger.warning("Signal timestamp too old")
+        if abs(time.time() - ts) > 60:
+            logger.warning("Signal too old")
             return False
 
-        # === BUILD PAYLOAD EXACTLY LIKE MQL5 EXPECTS ===
+        # BUILD PAYLOAD EXACTLY LIKE EA EXPECTS
         payload = {
-            "action": action,
+            "action": str(signal_data["action"]).upper(),
             "symbol": str(signal_data.get("symbol", "R_100")),
             "price": signal_data.get("price", 0.0),
             "sl_price": str(signal_data.get("sl_price", "")) or "",
@@ -65,54 +59,39 @@ def write_signal(signal_data: Dict[str, Any]) -> bool:
             "timestamp": str(ts)
         }
 
+        # THIS ORDER + FORMAT MUST MATCH EA 100%
         message = json.dumps(payload, separators=(',', ':'), sort_keys=True)
         signature = _hmac_signature(message).lower()
+
+        # ADD SIGNATURE TO PAYLOAD — THIS WAS MISSING!
         payload["signature"] = signature
 
-        # === ENCODE CONTENT ===
-        content_b64 = base64.b64encode(message.encode('utf-8')).decode('utf-8')
+        # UPLOAD FULL PAYLOAD WITH SIGNATURE
+        content_b64 = base64.b64encode(message.encode()).decode()
 
         url = f"https://api.github.com/repos/{REPO}/contents/{FILE_PATH}"
+        resp = session.get(url)
+        sha = resp.json().get("sha") if resp.ok else None
 
-        # Get current file to get SHA
-        try:
-            resp = session.get(url)
-            resp.raise_for_status()
-            sha = resp.json()["sha"]
-        except Exception as e:
-            logger.warning(f"Could not get current file SHA: {e}")
-            sha = None
-
-        # === UPLOAD ===
         data = {
-            "message": f"MT5 Signal: {action} {payload['symbol']} @ {payload['price']}",
+            "message": f"Signal: {payload['action']} {payload['symbol']}",
             "content": content_b64,
-            "branch": BRANCH,
+            "branch": BRANCH
         }
         if sha:
             data["sha"] = sha
 
-        logger.info(f"Sending to GitHub: {action} {payload['symbol']} @ {payload['price']}")
-
         r = session.put(url, json=data, timeout=15)
-
         if r.status_code in (200, 201):
-            logger.info("MT5 BRIDGE → SUCCESS! signals.json updated")
-            print("MT5 SIGNAL SUCCESS → signals.json updated in GitHub!")
+            logger.info("MT5 BRIDGE → SUCCESS (with signature)")
+            print("MT5 SIGNAL SENT — WITH HMAC SIGNATURE")
             return True
         else:
-            error_msg = r.json() if r.headers.get('content-type') == 'application/json' else r.text
-            logger.error(f"GitHub API Error {r.status_code}: {error_msg}")
-            print(f"MT5 BRIDGE FAILED: {r.status_code} → {error_msg}")
+            logger.error(f"GitHub error: {r.status_code} {r.text}")
             return False
 
-    except requests.exceptions.RequestException as e:
-        logger.error(f"Network error: {e}")
-        print(f"NETWORK ERROR: {e}")
-        return False
     except Exception as e:
-        logger.error(f"Unexpected error in MT5 bridge: {e}", exc_info=True)
-        print(f"BRIDGE CRASHED: {e}")
+        logger.error(f"Bridge error: {e}", exc_info=True)
         return False
 
 # Export

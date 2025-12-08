@@ -38,6 +38,15 @@ CAPITAL_ALLOCATION = {
     "vol_mean_reversion": 0.0,
 }
 
+# ── NUKE MODE — 300+ TRADES/DAY (EXTREME) ───────────────────────────────────
+NUKE_MODE = os.getenv("NUKE_MODE", "False").lower() == "true"
+
+if NUKE_MODE:
+    MIN_CONFIDENCE = 30
+    MAX_TRADE_AMOUNT = 0.50
+    TRADE_COOLDOWN = 2
+    print("NUKE MODE ACTIVATED — 300+ TRADES/DAY — HIGH RISK HIGH REWARD")
+
 # ── GLOBAL RISK SETTINGS ────────────────────────────────────────────────────
 MAX_TRADE_AMOUNT = float(os.getenv("MAX_TRADE_AMOUNT", "0.20"))
 MAX_OPEN_POSITIONS = int(os.getenv("MAX_OPEN_POSITIONS", "20"))

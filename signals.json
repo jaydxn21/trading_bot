@@ -1,11 +1,1 @@
-{
-  "action": "BUY",
-  "symbol": "R_100",
-  "price": 97.52841,
-  "sl_price": 97.04077,
-  "tp_price": 98.50369,
-  "strategy": "NUCLEAR_OVERRIDE",
-  "timestamp": 1765159894,
-  "confidence": 99,
-  "signature": "FD5692F342EB96918ECE76715B4083F4D0F09CEA8C5F0167D75D7349BA60BEA0"
-}
+{"action":"HOLD","price":0.0,"sl_price":"","strategy":"none","symbol":"R_100","timestamp":"1765303817","tp_price":""}

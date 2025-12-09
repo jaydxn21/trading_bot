@@ -1,1 +1,1 @@
-{"action":"HOLD","symbol":"R_100","price":0.0,"sl_price":"","tp_price":"","strategy":"none","timestamp":"1765307226","signature":"560df5968f1fbedc8c394315fd28f6bd5dedf1ddd7dfeb1c75efd62b3c0c13a0"}
+{"action":"SELL","symbol":"R_100","price":998.9180065855944,"sl_price":"1003.9125966185222","tp_price":"988.9288265197384","strategy":"scalper","timestamp":"1765307229","signature":"00d01d717aae315fe8ccf87443231caaa4b48f771698d7cc989f3a3c0949941f"}

@@ -567,3 +567,99 @@
 2025-12-07 20:12:17,536 | INFO     | Demo mode - skipping authentication
 2025-12-07 20:12:17,537 | INFO     | Connection state: connecting → authenticated Demo mode
 2025-12-07 20:12:19,997 | INFO     | FORCED 120 CANDLES — ANALYZING NOW
+2025-12-07 20:46:17,280 | INFO     | TELEGRAM NOTIFIER — NUCLEAR MODE ACTIVE
+2025-12-07 20:46:26,954 | INFO     | Strategies loaded: ['scalper', 'super_scalper']
+2025-12-07 20:46:26,991 | INFO     | DerivConnection initialized: Demo=True, AppID=111074
+2025-12-07 20:46:26,992 | INFO     | Connection state: disconnected → connecting Starting connection...
+2025-12-07 20:46:27,384 | INFO     | Websocket connected
+2025-12-07 20:46:27,385 | INFO     | Demo mode - skipping authentication
+2025-12-07 20:46:27,386 | INFO     | Connection state: connecting → authenticated Demo mode
+2025-12-07 20:46:29,996 | INFO     | 120 CANDLES FORCED — FIRING FIRST SIGNAL NOW
+2025-12-07 20:53:15,571 | INFO     | TELEGRAM NOTIFIER — NUCLEAR MODE ACTIVE
+2025-12-07 20:53:16,612 | INFO     | Strategies loaded: ['scalper', 'super_scalper']
+2025-12-07 20:53:16,684 | INFO     | DerivConnection initialized: Demo=True, AppID=111074
+2025-12-07 20:53:16,686 | INFO     | Connection state: disconnected → connecting Starting connection...
+2025-12-07 20:53:17,206 | INFO     | Websocket connected
+2025-12-07 20:53:17,207 | INFO     | Demo mode - skipping authentication
+2025-12-07 20:53:17,207 | INFO     | Connection state: connecting → authenticated Demo mode
+2025-12-07 20:53:19,783 | INFO     | 120 CANDLES FORCED — FIRING FIRST SIGNAL NOW
+2025-12-07 20:53:19,783 | INFO     | ANALYZING 120 CANDLES — LAST PRICE: 101.46467689758425
+2025-12-07 20:53:19,783 | WARNING  | Missing indicator: rsi
+2025-12-07 20:53:19,784 | INFO     | SCALPER → {'signal': 'hold', 'price': 101.46467689758425, 'confidence': 0, 'reason': 'Invalid indicators'}
+2025-12-07 20:53:19,899 | INFO     | SUPER_SCALPER → {'signal': 'hold', 'price': 101.46467689758425, 'confidence': 0, 'reason': 'Not in burst mode'}
+2025-12-07 20:53:19,899 | INFO     | HOLD — best confidence only 0%
+2025-12-07 20:55:54,894 | INFO     | TELEGRAM NOTIFIER — NUCLEAR MODE ACTIVE
+2025-12-07 20:55:56,941 | INFO     | Strategies loaded: ['scalper', 'super_scalper']
+2025-12-07 20:55:56,988 | INFO     | DerivConnection initialized: Demo=True, AppID=111074
+2025-12-07 20:55:56,988 | INFO     | Connection state: disconnected → connecting Starting connection...
+2025-12-07 20:55:57,325 | INFO     | Websocket connected
+2025-12-07 20:55:57,326 | INFO     | Demo mode - skipping authentication
+2025-12-07 20:55:57,326 | INFO     | Connection state: connecting → authenticated Demo mode
+2025-12-07 20:55:59,998 | INFO     | 120 PERFECT CANDLES FORCED — INDICATORS READY — FIRING IN 1 SECOND
+2025-12-07 20:56:01,005 | INFO     | ANALYZING 120 CANDLES — LAST PRICE: 103.45009059900894
+2025-12-07 20:56:01,005 | WARNING  | Missing indicator: rsi
+2025-12-07 20:56:01,005 | INFO     | SCALPER → {'signal': 'hold', 'price': 103.45009059900894, 'confidence': 0, 'reason': 'Invalid indicators'}
+2025-12-07 20:56:01,006 | INFO     | SUPER_SCALPER → {'signal': 'hold', 'price': 103.45009059900894, 'confidence': 0, 'reason': 'Not in burst mode'}
+2025-12-07 20:56:01,006 | INFO     | HOLD — best confidence only 0%
+2025-12-07 20:58:12,685 | INFO     | TELEGRAM NOTIFIER — NUCLEAR MODE ACTIVE
+2025-12-07 20:58:13,752 | INFO     | Strategies loaded: ['scalper', 'super_scalper']
+2025-12-07 20:58:13,780 | INFO     | DerivConnection initialized: Demo=True, AppID=111074
+2025-12-07 20:58:13,781 | INFO     | Connection state: disconnected → connecting Starting connection...
+2025-12-07 20:58:14,117 | INFO     | Websocket connected
+2025-12-07 20:58:14,118 | INFO     | Demo mode - skipping authentication
+2025-12-07 20:58:14,118 | INFO     | Connection state: connecting → authenticated Demo mode
+2025-12-07 20:58:16,789 | INFO     | FORCING NUCLEAR BUY SIGNAL — DERIV + GITHUB + TELEGRAM + MT5
+2025-12-07 20:58:16,790 | INFO     | DERIV TRADE FORCED → CALL $0.2
+2025-12-07 20:58:17,911 | INFO     | GITHUB → BUY | NUCLEAR_OVERRIDE | 99% | MT5 LIVE
+2025-12-07 20:59:12,558 | INFO     | TELEGRAM NOTIFIER — NUCLEAR MODE ACTIVE
+2025-12-07 20:59:14,154 | INFO     | Strategies loaded: ['scalper', 'super_scalper']
+2025-12-07 20:59:14,183 | INFO     | DerivConnection initialized: Demo=True, AppID=111074
+2025-12-07 20:59:14,184 | INFO     | Connection state: disconnected → connecting Starting connection...
+2025-12-07 20:59:14,603 | INFO     | Websocket connected
+2025-12-07 20:59:14,611 | INFO     | Demo mode - skipping authentication
+2025-12-07 20:59:14,613 | INFO     | Connection state: connecting → authenticated Demo mode
+2025-12-07 20:59:17,191 | INFO     | FORCING NUCLEAR BUY SIGNAL — DERIV + GITHUB + TELEGRAM + MT5
+2025-12-07 20:59:17,191 | INFO     | DERIV TRADE FORCED → CALL $0.2
+2025-12-07 20:59:18,498 | INFO     | GITHUB → BUY | NUCLEAR_OVERRIDE | 99% | MT5 LIVE
+2025-12-07 21:08:31,684 | ERROR    | disconnect handler error
+Traceback (most recent call last):
+  File "/Volumes/Backup Plus/repositories/trading_bot/venv/lib/python3.12/site-packages/engineio/server.py", line 450, in run_handler
+    return self.handlers[event](*args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Volumes/Backup Plus/repositories/trading_bot/venv/lib/python3.12/site-packages/socketio/server.py", line 670, in _handle_eio_disconnect
+    for n in list(self.manager.get_namespaces()).copy():
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Volumes/Backup Plus/repositories/trading_bot/venv/lib/python3.12/site-packages/socketio/base_manager.py", line 27, in get_namespaces
+    def get_namespaces(self):
+    
+KeyboardInterrupt
+2025-12-07 21:08:41,328 | INFO     | TELEGRAM NOTIFIER — NUCLEAR MODE ACTIVE
+2025-12-07 21:08:43,474 | INFO     | Strategies loaded: ['scalper', 'super_scalper']
+2025-12-07 21:08:43,513 | INFO     | DerivConnection initialized: Demo=True, AppID=111074
+2025-12-07 21:08:43,514 | INFO     | Connection state: disconnected → connecting Starting connection...
+2025-12-07 21:08:44,001 | INFO     | Websocket connected
+2025-12-07 21:08:44,003 | INFO     | Demo mode - skipping authentication
+2025-12-07 21:08:44,003 | INFO     | Connection state: connecting → authenticated Demo mode
+2025-12-07 21:08:46,522 | INFO     | FORCING NUCLEAR BUY SIGNAL — DERIV + GITHUB + TELEGRAM + MT5
+2025-12-07 21:08:46,523 | INFO     | DERIV TRADE FORCED → CALL $0.2
+2025-12-07 21:08:47,767 | INFO     | GITHUB SIGNAL → BUY | NUCLEAR_OVERRIDE | 99% | MT5 LIVE
+2025-12-07 21:09:32,599 | INFO     | TELEGRAM NOTIFIER — NUCLEAR MODE ACTIVE
+2025-12-07 21:09:34,159 | INFO     | Strategies loaded: ['scalper', 'super_scalper']
+2025-12-07 21:09:34,186 | INFO     | DerivConnection initialized: Demo=True, AppID=111074
+2025-12-07 21:09:34,195 | INFO     | Connection state: disconnected → connecting Starting connection...
+2025-12-07 21:09:34,655 | INFO     | Websocket connected
+2025-12-07 21:09:34,655 | INFO     | Demo mode - skipping authentication
+2025-12-07 21:09:34,656 | INFO     | Connection state: connecting → authenticated Demo mode
+2025-12-07 21:09:37,208 | INFO     | FORCING NUCLEAR BUY SIGNAL — DERIV + GITHUB + TELEGRAM + MT5
+2025-12-07 21:09:37,209 | INFO     | DERIV TRADE FORCED → CALL $0.2
+2025-12-07 21:09:38,460 | INFO     | GITHUB SIGNAL → BUY | NUCLEAR_OVERRIDE | 99% | MT5 LIVE
+2025-12-07 21:11:29,220 | INFO     | TELEGRAM NOTIFIER — NUCLEAR MODE ACTIVE
+2025-12-07 21:11:31,572 | INFO     | Strategies loaded: ['scalper', 'super_scalper']
+2025-12-07 21:11:31,606 | INFO     | DerivConnection initialized: Demo=True, AppID=111074
+2025-12-07 21:11:31,607 | INFO     | Connection state: disconnected → connecting Starting connection...
+2025-12-07 21:11:32,002 | INFO     | Websocket connected
+2025-12-07 21:11:32,006 | INFO     | Demo mode - skipping authentication
+2025-12-07 21:11:32,007 | INFO     | Connection state: connecting → authenticated Demo mode
+2025-12-07 21:11:34,632 | INFO     | FORCING NUCLEAR BUY SIGNAL — DERIV + GITHUB + TELEGRAM + MT5
+2025-12-07 21:11:34,633 | INFO     | DERIV TRADE FORCED → CALL $0.2
+2025-12-07 21:11:35,746 | INFO     | GITHUB SIGNAL → BUY | NUCLEAR_OVERRIDE | 99% | MT5 LIVE

@@ -1,31 +1,31 @@
 [
   {
-    "time": "2025-12-24T11:54:46.981223",
+    "time": "2025-12-24T11:55:52.895455",
     "event": "SELL",
-    "ticket": 1766577286,
+    "ticket": 1766577352,
     "symbol": "R_100",
-    "volume": 0.01,
-    "price": 1000.6486835762458,
+    "volume": 0.04,
+    "price": 999.7247269841312,
     "profit": 0.0,
     "strategy": "scalper"
   },
   {
-    "time": "2025-12-24T11:55:09.155620",
+    "time": "2025-12-24T11:56:14.700624",
     "event": "SELL",
-    "ticket": 1766577309,
-    "symbol": "R_100",
-    "volume": 0.01,
-    "price": 999.7240177589871,
-    "profit": 0.0,
-    "strategy": "scalper"
-  },
-  {
-    "time": "2025-12-24T11:55:30.927030",
-    "event": "SELL",
-    "ticket": 1766577330,
+    "ticket": 1766577374,
     "symbol": "R_100",
     "volume": 0.02,
-    "price": 999.151643888266,
+    "price": 999.3025392927967,
+    "profit": 0.0,
+    "strategy": "scalper"
+  },
+  {
+    "time": "2025-12-24T11:56:36.462947",
+    "event": "SELL",
+    "ticket": 1766577396,
+    "symbol": "R_100",
+    "volume": 0.01,
+    "price": 998.9417274593707,
     "profit": 0.0,
     "strategy": "scalper"
   }

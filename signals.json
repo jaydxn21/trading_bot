@@ -9010,5 +9010,12 @@
     "confidence": 30,
     "strategy": "scalper",
     "timestamp": 1767007689
+  },
+  {
+    "action": "SELL",
+    "symbol": "R_100",
+    "confidence": 10,
+    "strategy": "scalper",
+    "timestamp": 1767007712
   }
 ]

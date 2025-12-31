@@ -23717,5 +23717,12 @@
     "confidence": 60,
     "strategy": "scalper",
     "timestamp": 1767139749
+  },
+  {
+    "action": "BUY",
+    "symbol": "R_100",
+    "confidence": 60,
+    "strategy": "scalper",
+    "timestamp": 1767139761
   }
 ]

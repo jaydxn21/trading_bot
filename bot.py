@@ -1,15 +1,24 @@
-# bot.py — Modular Trading Bot with HTF support
+# bot.py
+
 import logging
 import time
 import numpy as np
+import requests
 from datetime import datetime
+
 from trade_manager import TradingManager
 from strategies.scalper import ScalperStrategy
 from strategies.super_scalper import SuperScalperStrategy
-from utils.indicators import calculate_common_indicators
+from strategies.crash_boom import CrashBoomStrategy
 
 # -------------------------
-# Logger setup
+# Config
+# -------------------------
+JOURNAL_ENDPOINT = "http://127.0.0.1:8085/journal"
+SYMBOL = "Crash 1000 Index"
+
+# -------------------------
+# Logger
 # -------------------------
 logging.basicConfig(
     level=logging.INFO,
@@ -21,82 +30,96 @@ logger = logging.getLogger(__name__)
 # Strategy registry
 # -------------------------
 STRATEGY_CLASSES = {
+    "crash_boom": CrashBoomStrategy,
+    "super_scalper": SuperScalperStrategy,
     "scalper": ScalperStrategy,
-    "super_scalper": SuperScalperStrategy
 }
 
-# Factory function for TradingManager
-def get_strategy_instance(name: str):
+def get_strategy_instance(name):
     cls = STRATEGY_CLASSES.get(name)
-    if cls:
-        return cls()
-    return None
+    return cls() if cls else None
 
 # -------------------------
-# Simulated candle feed
+# Candle generator
 # -------------------------
 def generate_mock_candles(num=120, start_price=1000):
-    """Generate mock OHLCV candles for testing"""
     candles = []
     price = start_price
-    for i in range(num):
-        change = np.random.normal(0, 0.3)  # small random walk
+    for _ in range(num):
+        change = np.random.normal(0, 0.6)
         open_p = price
         close_p = max(1, price + change)
-        high_p = max(open_p, close_p) + np.random.random() * 0.2
-        low_p = min(open_p, close_p) - np.random.random() * 0.2
-        volume = np.random.randint(10, 100)
+        high_p = max(open_p, close_p) + abs(np.random.normal(0, 0.3))
+        low_p = min(open_p, close_p) - abs(np.random.normal(0, 0.3))
         candles.append({
-            "timestamp": int(time.time()) - (num-i)*60,
+            "timestamp": int(time.time()),
             "open": open_p,
             "high": high_p,
             "low": low_p,
-            "close": close_p,
-            "volume": volume
+            "close": close_p
         })
         price = close_p
     return candles
 
 # -------------------------
-# Bot main loop
+# Journal
+# -------------------------
+def journal_trade(event, ticket, symbol, volume, price, strategy):
+    payload = {
+        "time": datetime.utcnow().isoformat(),
+        "event": event,
+        "ticket": ticket,
+        "symbol": symbol,
+        "volume": volume,
+        "price": price,
+        "strategy": strategy
+    }
+    try:
+        requests.post(JOURNAL_ENDPOINT, json=payload, timeout=5)
+    except Exception as e:
+        logger.warning(f"Journal failed: {e}")
+
+# -------------------------
+# Main loop
 # -------------------------
 def main():
-    active_strategies = ["scalper", "super_scalper"]
     manager = TradingManager(get_strategy_func=get_strategy_instance)
 
-    # Simulate live feed
     candles = generate_mock_candles(150)
-    current_price = candles[-1]["close"]
+    price = candles[-1]["close"]
 
     while True:
-        # In a real bot, fetch latest candle from exchange API
-        # For simulation, append a new mock candle
-        new_candle = generate_mock_candles(1, start_price=current_price)[0]
-        candles.append(new_candle)
-        if len(candles) > 200:
-            candles = candles[-200:]
+        new = generate_mock_candles(1, start_price=price)[0]
+        candles.append(new)
+        candles = candles[-200:]
+        price = new["close"]
 
-        current_price = new_candle["close"]
+        signal = manager.run_cycle(
+            candles=candles,
+            price=price,
+            symbol=SYMBOL
+        )
 
-        # Run trading cycle
-        signal = manager.run_cycle(candles, current_price)
+        if signal["signal"] != "hold":
+            logger.warning(
+                f"🚀 {signal['signal'].upper()} | "
+                f"{SYMBOL} @ {price:.2f} | "
+                f"Conf={signal['confidence']}% | "
+                f"Strategy={signal['strategy']}"
+            )
 
-        # Logging output
-        if signal["signal"] not in ["hold", "HOLD"]:
-            logger.info(
-                f"TRADE SIGNAL: {signal['signal'].upper()} | "
-                f"Price: {current_price:.2f} | "
-                f"Conf: {signal['confidence']}% | "
-                f"Strategy: {signal['strategy']} | "
-                f"HTF: {manager.current_htf_trend}({manager.last_htf_strength})"
+            journal_trade(
+                event=signal["signal"].upper(),
+                ticket=int(time.time()),
+                symbol=SYMBOL,
+                volume=signal.get("lot", 1.0),
+                price=price,
+                strategy=signal["strategy"]
             )
         else:
-            logger.info(
-                f"HOLD | Price: {current_price:.2f} | "
-                f"HTF: {manager.current_htf_trend}({manager.last_htf_strength})"
-            )
+            logger.info(f"HOLD | {SYMBOL} | Price={price:.2f}")
 
-        time.sleep(2)  # simulate wait for next candle (2 seconds for testing)
+        time.sleep(2)
 
 if __name__ == "__main__":
     main()

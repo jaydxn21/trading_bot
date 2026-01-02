@@ -55385,5 +55385,12 @@
     "confidence": 78,
     "strategy": "crash_boom",
     "timestamp": 1767312193
+  },
+  {
+    "action": "SELL",
+    "symbol": "R_100",
+    "confidence": 40,
+    "strategy": "scalper",
+    "timestamp": 1767312217
   }
 ]

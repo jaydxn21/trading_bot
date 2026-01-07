@@ -4149,5 +4149,12 @@
     "confidence": 95,
     "strategy": "crash_boom",
     "timestamp": 1767746171
+  },
+  {
+    "action": "SELL",
+    "symbol": "Boom 1000 Index",
+    "confidence": 95,
+    "strategy": "crash_boom",
+    "timestamp": 1767746176
   }
 ]

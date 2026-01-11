@@ -38015,5 +38015,12 @@
     "confidence": 37,
     "strategy": "scalper",
     "timestamp": 1768154791
+  },
+  {
+    "action": "SELL",
+    "symbol": "Crash 1000 Index",
+    "confidence": 37,
+    "strategy": "scalper",
+    "timestamp": 1768154794
   }
 ]

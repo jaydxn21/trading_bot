@@ -44700,5 +44700,12 @@
     "confidence": 62,
     "strategy": "scalper",
     "timestamp": 1768152377
+  },
+  {
+    "action": "BUY",
+    "symbol": "Boom 1000 Index",
+    "confidence": 62,
+    "strategy": "scalper",
+    "timestamp": 1768152380
   }
 ]

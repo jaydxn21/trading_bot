@@ -9791,5 +9791,12 @@
     "confidence": 53,
     "strategy": "scalper",
     "timestamp": 1768445798
+  },
+  {
+    "action": "SELL",
+    "symbol": "Boom 1000 Index",
+    "confidence": 53,
+    "strategy": "scalper",
+    "timestamp": 1768446600
   }
 ]

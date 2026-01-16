@@ -27697,5 +27697,12 @@
     "confidence": 63,
     "strategy": "scalper",
     "timestamp": 1768597320
+  },
+  {
+    "action": "SELL",
+    "symbol": "Volatility 100 Index",
+    "confidence": 63,
+    "strategy": "scalper",
+    "timestamp": 1768597323
   }
 ]

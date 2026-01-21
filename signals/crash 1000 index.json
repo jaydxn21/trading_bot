@@ -4,5 +4,11 @@
     "symbol": "Crash 1000 Index",
     "confidence": 65,
     "timestamp": 1768994378
+  },
+  {
+    "action": "HOLD",
+    "symbol": "Crash 1000 Index",
+    "confidence": 65,
+    "timestamp": 1768994439
   }
 ]

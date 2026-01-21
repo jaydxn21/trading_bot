@@ -1,43 +1,5 @@
 [
   {
-    "action": "SELL",
-    "symbol": "Volatility 100 Index",
-    "confidence": 70,
-    "strategy": "super_scalper",
-    "timestamp": 1768747080
-  },
-  {
-    "action": "SELL",
-    "symbol": "Volatility 100 Index",
-    "confidence": 70,
-    "strategy": "super_scalper",
-    "timestamp": 1768747083
-  },
-  {
-    "action": "HOLD",
-    "symbol": "Volatility 100 Index",
-    "confidence": 80,
-    "timestamp": 1768994801
-  },
-  {
-    "action": "HOLD",
-    "symbol": "Volatility 100 Index",
-    "confidence": 95,
-    "timestamp": 1768994860
-  },
-  {
-    "action": "HOLD",
-    "symbol": "Volatility 100 Index",
-    "confidence": 95,
-    "timestamp": 1768994920
-  },
-  {
-    "action": "HOLD",
-    "symbol": "Volatility 100 Index",
-    "confidence": 80,
-    "timestamp": 1768994982
-  },
-  {
     "action": "HOLD",
     "symbol": "Volatility 100 Index",
     "confidence": 80,
@@ -60,5 +22,12 @@
     "symbol": "Volatility 100 Index",
     "confidence": 65,
     "timestamp": 1768996200
+  },
+  {
+    "action": "BUY",
+    "symbol": "Volatility 100 Index",
+    "confidence": 99,
+    "strategy": "TEST_TRIGGER",
+    "timestamp": 1768996272
   }
 ]

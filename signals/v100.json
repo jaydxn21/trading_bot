@@ -5,5 +5,12 @@
     "confidence": 99,
     "strategy": "TEST_TRIGGER",
     "timestamp": 1768997247
+  },
+  {
+    "action": "BUY",
+    "symbol": "Volatility 100 Index",
+    "confidence": 99,
+    "strategy": "TEST_TRIGGER",
+    "timestamp": 1768997498
   }
 ]

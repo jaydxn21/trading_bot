@@ -28,5 +28,11 @@
     "symbol": "Boom 1000 Index",
     "confidence": 80,
     "timestamp": 1768996685
+  },
+  {
+    "action": "HOLD",
+    "symbol": "Boom 1000 Index",
+    "confidence": 65,
+    "timestamp": 1768996746
   }
 ]

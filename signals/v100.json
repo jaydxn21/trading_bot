@@ -4,13 +4,6 @@
     "symbol": "Volatility 100 Index",
     "confidence": 70,
     "strategy": "super_scalper",
-    "timestamp": 1768743300
-  },
-  {
-    "action": "SELL",
-    "symbol": "Volatility 100 Index",
-    "confidence": 70,
-    "strategy": "super_scalper",
     "timestamp": 1768743303
   },
   {
@@ -64,5 +57,11 @@
     "symbol": "Volatility 100 Index",
     "confidence": 80,
     "timestamp": 1768994982
+  },
+  {
+    "action": "HOLD",
+    "symbol": "Volatility 100 Index",
+    "confidence": 80,
+    "timestamp": 1768995042
   }
 ]

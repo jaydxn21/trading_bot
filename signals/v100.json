@@ -3,12 +3,6 @@
     "action": "SELL",
     "symbol": "R_100",
     "confidence": 65,
-    "timestamp": 1769096840
-  },
-  {
-    "action": "SELL",
-    "symbol": "R_100",
-    "confidence": 65,
     "timestamp": 1769097804
   },
   {
@@ -58,5 +52,11 @@
     "symbol": "R_100",
     "confidence": 65,
     "timestamp": 1769112614
+  },
+  {
+    "action": "BUY",
+    "symbol": "R_100",
+    "confidence": 65,
+    "timestamp": 1769114052
   }
 ]

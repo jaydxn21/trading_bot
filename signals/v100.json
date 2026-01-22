@@ -42,5 +42,11 @@
     "symbol": "R_100",
     "confidence": 65,
     "timestamp": 1769086656
+  },
+  {
+    "action": "SELL",
+    "symbol": "R_100",
+    "confidence": 65,
+    "timestamp": 1769090734
   }
 ]

@@ -1,12 +1,5 @@
 [
   {
-    "action": "BUY",
-    "symbol": "Volatility 100 Index",
-    "confidence": 99,
-    "strategy": "TEST_TRIGGER",
-    "timestamp": 1768997498
-  },
-  {
     "action": "SELL",
     "symbol": "R_100",
     "confidence": 65,
@@ -59,5 +52,11 @@
     "symbol": "R_100",
     "confidence": 85,
     "timestamp": 1769094452
+  },
+  {
+    "action": "SELL",
+    "symbol": "R_100",
+    "confidence": 65,
+    "timestamp": 1769095680
   }
 ]

@@ -12,5 +12,11 @@
     "confidence": 99,
     "strategy": "TEST_TRIGGER",
     "timestamp": 1768997498
+  },
+  {
+    "action": "SELL",
+    "symbol": "R_100",
+    "confidence": 65,
+    "timestamp": 1769082157
   }
 ]

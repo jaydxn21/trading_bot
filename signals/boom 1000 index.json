@@ -40,5 +40,11 @@
     "symbol": "BOOM 1000 INDEX",
     "confidence": 90,
     "timestamp": 1769139684
+  },
+  {
+    "action": "BUY",
+    "symbol": "BOOM 1000 INDEX",
+    "confidence": 90,
+    "timestamp": 1769143392
   }
 ]

@@ -3,12 +3,6 @@
     "action": "SELL",
     "symbol": "CRASH 1000 INDEX",
     "confidence": 90,
-    "timestamp": 1769172078
-  },
-  {
-    "action": "SELL",
-    "symbol": "CRASH 1000 INDEX",
-    "confidence": 90,
     "timestamp": 1769172979
   },
   {
@@ -58,5 +52,11 @@
     "symbol": "CRASH 1000 INDEX",
     "confidence": 90,
     "timestamp": 1769186189
+  },
+  {
+    "action": "SELL",
+    "symbol": "CRASH 1000 INDEX",
+    "confidence": 90,
+    "timestamp": 1769187090
   }
 ]

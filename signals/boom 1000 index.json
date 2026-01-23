@@ -3,12 +3,6 @@
     "action": "HOLD",
     "symbol": "Boom 1000 Index",
     "confidence": 80,
-    "timestamp": 1768994376
-  },
-  {
-    "action": "HOLD",
-    "symbol": "Boom 1000 Index",
-    "confidence": 80,
     "timestamp": 1768994437
   },
   {
@@ -58,5 +52,11 @@
     "symbol": "BOOM 1000 INDEX",
     "confidence": 90,
     "timestamp": 1769145193
+  },
+  {
+    "action": "BUY",
+    "symbol": "BOOM 1000 INDEX",
+    "confidence": 90,
+    "timestamp": 1769177160
   }
 ]
